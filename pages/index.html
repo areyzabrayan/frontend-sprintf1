@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Whatsapp</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="leftContainer">
+        <!--Header-->
+        <div class="header">
+          <figure class="userimg">
+            <img src="../img/kelly.jpg" alt="imgUser" class="cover" />
+          </figure>
+          <ul class="nav__icon">
+            <li><ion-icon name="ellipsis-vertical-outline"></ion-icon></li>
+          </ul>
+        </div>
+
+        <!--search-->
+        <div class="search__chat">
+          <div>
+            <input type="text" placeholder="Buscar o iniciar un nuevo chat." />
+            <ion-icon name="search-outline"></ion-icon>
+          </div>
+        </div>
+
+        <!--chatList-->
+        <div class="chatlist">
+          <div class="block">
+            <figure class="imgchat">
+              <img
+                src="../img/albert-einstein.jpeg"
+                alt="imgchat"
+                class="cover"
+              />
+            </figure>
+            <div class="description">
+              <div class="headList">
+                <h4>Albert Einstein</h4>
+                <p class="time">12:27</p>
+              </div>
+              <div class="message">
+                <p>
+                  “Locura es hacer lo mismo una y otra vez esperando obtener
+                  resultados diferentes”.
+                </p>
+                <b>1</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="righContainer">
+        <div class="header">
+          <div class="imgText">
+            <figure class="userimg">
+              <img
+                src="../img/albert-einstein.jpeg"
+                alt="imgUser"
+                class="cover"
+              />
+            </figure>
+            <h4>Albert Einstein <br /><span>EN LÍNEA</span></h4>
+          </div>
+          <ul class="nav__icon">
+            <li><ion-icon name="search-outline"></ion-icon></li>
+          </ul>
+        </div>
+
+        <!--message box-->
+        <div class="mensaje__box"></div>
+
+        <!-- chat box input-->
+        <div class="chatbox__input">
+          <ion-icon name="happy-outline"></ion-icon>
+          <ion-icon name="attach-outline"></ion-icon>
+          <input type="text" placeholder="Escribe un mensaje" />
+          <ion-icon name="mic-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
