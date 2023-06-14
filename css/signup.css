@@ -38,13 +38,13 @@
     align-items: center;
 }
 
-.form h1{
+#form h1{
     display: flex;
     align-content: center;
     padding-bottom: 30px;
     justify-content: center;
 }
-.form{
+#form{
     display: flex;
     flex-direction: column;
     padding: 20px;
