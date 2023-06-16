@@ -34,7 +34,7 @@ async function validateUser(event) {
     }
 
     if (cellNumberActivo) {
-      location.href = "../pages/online.html";
+      location.href = "././pages/online.html";
     } else {
       if (mostrarError) {
         console.log("errorhola");

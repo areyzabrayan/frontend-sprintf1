@@ -1,5 +1,5 @@
-import { URL_API } from "../services/dataUsers.js";
-import getUsers from "../services/getUsers.js";
+import { URL_API } from "./services/dataUsers.js";
+import getUsers from "./services/getUsers.js";
 import { toggleSignInUp } from "./modules/toggleSignInUp.js";
 import validateUser from "./services/validateUser.js";
 
