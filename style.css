@@ -10,7 +10,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(img/1.jpg);
+  background-image: url(img/imgSignInUp/1.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -151,4 +151,24 @@ body {
 .sign-up.active {
   opacity: 0;
   visibility: hidden;
+}
+
+.notification {
+  position: absolute;
+  top: 85%;
+  right: 20%;
+  padding: 10px;
+  background-color: rgb(236, 35, 35);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.5s;
+  font-weight: 600;
+}
+
+.notification.show {
+  opacity: 1;
+}
+
+.notification.hide {
+  opacity: 0;
 }
