@@ -1,14 +1,14 @@
 import { URL_API } from "./services/dataUsers.js";
 import getUsers from "./services/getUsers.js";
+import { validateUser, seeSegnin } from "./services/validateUser.js";
+//toggleSignInUp();
 import { toggleSignInUp } from "./modules/toggleSignInUp.js";
-import validateUser from "./services/validateUser.js";
+// Elementos DOM.
+import { bluebg, form } from "./modules/dataDom.js";
 
-getUsers(URL_API);
-toggleSignInUp();
+localStorage.clear();
+seeSegnin();
+//toggleSignInUp();
+bluebg.addEventListener("click", toggleSignInUp);
 
-//---VALIDAR USUARIO Y CONTRASEÑA
-const form = document.getElementById("login");
-
-form.addEventListener("submit", (event) => {
-  validateUser(event);
-});
+form.addEventListener("submit", validateUser);

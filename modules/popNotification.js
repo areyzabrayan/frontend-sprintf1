@@ -1,5 +1,5 @@
 // notification mensaje
-function popNotification(message) {
+export const popNotification = (message) => {
   const notification = document.querySelector(".notification");
   notification.textContent = message;
   notification.classList.add("show");
@@ -7,6 +7,14 @@ function popNotification(message) {
   setTimeout(() => {
     notification.classList.remove("show");
   }, 3000);
-}
+};
 
-export default popNotification;
+export const popNotification2 = (message) => {
+  const notification = document.querySelector(".notification2");
+  notification.textContent = message;
+  notification.classList.add("show");
+
+  setTimeout(() => {
+    notification.classList.remove("show");
+  }, 3000);
+};
