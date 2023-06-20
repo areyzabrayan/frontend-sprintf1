@@ -1,52 +1,59 @@
-import validateUser from "../validateUser.js";
-import { URL_API } from "../services/dataUsers.js";
+// import { URL_API } from "../services/dataUsers.js";
 
-const form = document.getElementsByClassName("formulario");
+// const form = document.getElementsByClassName("formulario")[0];
 
-const createUser = async (form) => {
-    try {
-      const response = await axios.get(URL_API);
-      const usuarios = response.data;
-  
-      const newUser = {};
-      const newUserInput = form.querySelectorAll(".cuenta-gratis input");
-      Array.from(newUserInput).forEach((item) => {
-        newUser[item.id] = item.value;
-      });
-  
-      const nameExists = usuarios.some((user) => user.Nombre === newUser.name);
-      if (nameExists) {
-        alert("El nombre ya existe");
-        return;
-      }
-     const numberExists = usuarios.some((user) => user.Celphone === newUser.number);
-      if (numberExists) {
-        alert("Número de celular ya registrado");
-        return;
-      }
-  
-      const passwordExists = usuarios.some((user) => user.password === newUser.password);
-      if (passwordExists) {
-        alert("La contraseña ya existe");
-        return;
-      }
-  
-      const urlExists = usuarios.some((user) => user.url === newUser.url);
-      if (urlExists) {
-        alert("La URL de imagen ya existe");
-        return;
-      }
-  
-      console.log(newUser);
-      form.reset();
-    } catch (error) {
-      console.log(error);
-      alert("Ha ocurrido un error al crear el usuario");
-    }
-  };
-  
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-  
-    await createUser(form);
-  });
+// const createUser = async (form) => {
+//   try {
+//     const response = await axios.get(URL_API);
+//     const usuarios = response.data;
+
+//     const newUser = {};
+//     const newUserInputs = form.querySelectorAll(".input input");
+//     Array.from(newUserInputs).map((item) => {
+//       newUser[item.id] = item.value;
+//     });
+
+//     const userExists = usuarios.find(
+//       (user) =>
+//         user.Nombre === newUser.name ||
+//         user.Celphone === newUser.Celphone ||
+//         user.password === newUser.password
+//     );
+//     if (userExists) {
+//       alert('Usuario ya existe');
+//       return;
+//     }
+
+//     console.log(newUser);
+//     form.reset();
+
+//     addToUsers(newUser);
+//   } catch (error) {
+//     console.log(error);
+//     alert("Ha ocurrido un error al crear el usuario");
+//   },
+// }
+
+// const addToUsers = (newUser) => {
+//   axios
+//     .post(URL_API, newUser, {
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//     })
+//     .then((response) => {
+//       alert('Elemento agregado a Usuarios: ' + response.data);
+//     })
+//     .catch((error) => {
+//       console.log('Error al agregar elemento a Usuarios:', error);
+//     });
+// };
+
+// async function newUser(event) {
+//   event.preventDefault();
+//   await createUser(form);
+// }
+
+// export default newUser;
+
+

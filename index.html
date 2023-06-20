@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -41,12 +42,19 @@
             <i class="bx bxl-facebook-circle"></i>
           </div>
         </div>
-        <p class="cuenta-gratis">Crear una cuenta gratis</p>
-        <input type="text" placeholder="Enter your name" />
-        <input type="number" placeholder="Cell phone number" />
-        <input type="password" placeholder="Password" />
-        <input type="url" placeholder="Url image" />
-        <input id="boton-login" type="submit" value="Registrarse" />
+        <div class="input">
+          <label for="name">Enter your name <em>*</em></label>
+          <input type="text" id="name" title="Solo se aceptan letras" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" />
+          <label for="number">Cell phone number <em>*</em></label>
+           <input type="number" id="number"title="Solo se aceptan numeros" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"  /> 
+          <label for="password">password <em>*</em></label>
+          <input type="password" id="password" />
+          <label for="url">url image <em>*</em></label>
+          <input type="url" id="url" />
+        </div>
+        <div class="button">
+          <button class="btn" type="submit" data-id="element.data">Sign up</button>
+        </div>
       </form>
     </div>
     <div class="container-form sign-in">
