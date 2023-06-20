@@ -47,11 +47,6 @@ export const validateUser = async (event) => {
   }
 };
 
-<<<<<<< HEAD
-export default validateUser;
-
-
-=======
 const validPwd = (users) => {
   const enteredPwd = Number(passwordInput.value);
   const foundPwd = users.find((user) => user.password === enteredPwd);
@@ -96,4 +91,3 @@ const versosial = () => {
   const storedArray = JSON.parse(storedArrayString);
   console.log(storedArray);
 };
->>>>>>> 9cef58aa07694b95a7cad566d433f9c9f1f861c9
