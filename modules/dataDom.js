@@ -12,3 +12,5 @@ export const passwordInput = document.querySelector("#password");
 export const loginInput = document.querySelector("#login");
 export const form = document.querySelector("#form");
 export const form2 = document.querySelector("#form2");
+export const container = document.querySelector(".container");
+export const desktop = document.querySelector(".desktop");

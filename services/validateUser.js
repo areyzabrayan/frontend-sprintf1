@@ -11,10 +11,13 @@ import {
   loginInput,
   form2,
   form,
+  desktop,
+  container,
 } from "../modules/dataDom.js";
 
 export const validateUser = async (event) => {
   event.preventDefault();
+
   try {
     // Obtener los usuarios desde el servidor
     const response = await getUsers(URL_API);
@@ -48,12 +51,16 @@ const validPwd = (users) => {
   const enteredPwd = Number(passwordInput.value);
   const foundPwd = users.find((user) => user.password === enteredPwd);
   if (foundPwd) {
-    popNotification2("welcom");
+    const userSesion = JSON.stringify(foundPwd);
+    localStorage.setItem("foundPwd", userSesion);
+    versosial();
+    seeDesktop();
   } else {
     popNotification("Incorrect password");
     form.reset();
     form2.reset();
     addHiddenPwd();
+    seeSegnin();
   }
 };
 
@@ -67,4 +74,20 @@ const removHiddenPwd = () => {
   passwordInput.classList.remove("hidden");
   loginInput.classList.remove("hidden");
   nextInput.classList.add("hidden");
+};
+
+export const seeSegnin = () => {
+  container.classList.remove("borrar");
+  desktop.classList.add("borrar");
+};
+
+const seeDesktop = () => {
+  container.classList.add("borrar");
+  desktop.classList.remove("borrar");
+};
+
+const versosial = () => {
+  const storedArrayString = localStorage.getItem("foundPwd");
+  const storedArray = JSON.parse(storedArrayString);
+  console.log(storedArray);
 };
