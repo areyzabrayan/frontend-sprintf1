@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<<<<<<< HEAD
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,31 +18,47 @@
       href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
       rel="stylesheet"
     />
+=======
+>>>>>>> 9cef58aa07694b95a7cad566d433f9c9f1f861c9
     <title>login</title>
   </head>
-
   <body>
-    <div class="container-form sign-up">
-      <div class="welcome-back">
-        <div class="message">
-          <h2>Bienvenido a Makaia</h2>
-          <p>Si ya tienes una cuenta por favor inicia sesion aqui</p>
-          <button class="sign-up-btn">Iniciar Sesion</button>
+    <div class="container">
+      <div class="bluebg">
+        <div class="box signin">
+          <h2>Already have an account ?</h2>
+          <button class="signinBton sign-in-btn">Sing in</button>
+        </div>
+        <div class="box signup">
+          <h2>Don't have an account ?</h2>
+          <button class="signupBton sign-up-btn">Sign up for free</button>
         </div>
       </div>
-      <form class="formulario">
-        <h2 class="create-account">Crear una cuenta</h2>
-        <div class="iconos">
-          <div class="border-icon">
-            <i class="bx bxl-instagram"></i>
-          </div>
-          <div class="border-icon">
-            <i class="bx bxl-linkedin"></i>
-          </div>
-          <div class="border-icon">
-            <i class="bx bxl-facebook-circle"></i>
-          </div>
+      <div class="formBx">
+        <div class="form signinForm sign-in">
+          <h3>Sign In</h3>
+          <form id="form">
+            <input
+              type="number"
+              placeholder="Cell phone number"
+              id="celphone"
+            />
+            <input type="submit" value="Next" id="Next" />
+          </form>
+          <form id="form2">
+            <input
+              type="password"
+              placeholder="Password"
+              id="password"
+              class="hidden"
+            />
+            <input type="submit" value="Login" id="login" class="hidden" />
+            <a href="#" class="forgot hidden">Forgot Password</a>
+          </form>
+          <p class="notification"></p>
+          <p class="notification2"></p>
         </div>
+<<<<<<< HEAD
         <div class="input">
           <label for="name">Enter your name <em>*</em></label>
           <input type="text" id="name" title="Solo se aceptan letras" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" />
@@ -82,9 +99,110 @@
           <h2>Bienvenido de nuevo</h2>
           <p>Si aun no tienes una cuenta por favor registrese aqui</p>
           <button class="sign-in-btn">Registrarse</button>
+=======
+
+        <div class="form signupForm sign-up">
+          <form>
+            <h3>Sign Up</h3>
+            <input type="text" placeholder="Enter your name" />
+            <input type="number" placeholder="Cell phone number" />
+            <input type="password" placeholder="Password" />
+            <input type="url" placeholder="Url image" />
+            <input id="boton-login" type="submit" value="Registrarse" />
+          </form>
+>>>>>>> 9cef58aa07694b95a7cad566d433f9c9f1f861c9
         </div>
       </div>
     </div>
+    <div class="desktop">
+      <div class="desktop2">
+        <div class="leftContainer">
+          <!--Header-->
+          <div class="header">
+            <figure class="userimg">
+              <img src="../img/kelly.jpg" alt="imgUser" class="cover" />
+            </figure>
+            <ul class="nav__icon">
+              <li><ion-icon name="ellipsis-vertical-outline"></ion-icon></li>
+            </ul>
+          </div>
+
+          <!--search-->
+          <div class="search__chat">
+            <div>
+              <input
+                type="text"
+                placeholder="Buscar o iniciar un nuevo chat."
+              />
+              <ion-icon name="search-outline"></ion-icon>
+            </div>
+          </div>
+
+          <!--chatList-->
+          <div class="chatlist">
+            <div class="block">
+              <figure class="imgchat">
+                <img
+                  src="../img/albert-einstein.jpeg"
+                  alt="imgchat"
+                  class="cover"
+                />
+              </figure>
+              <div class="description">
+                <div class="headList">
+                  <h4>Albert Einstein</h4>
+                  <p class="time">12:27</p>
+                </div>
+                <div class="message">
+                  <p>
+                    “Locura es hacer lo mismo una y otra vez esperando obtener
+                    resultados diferentes”.
+                  </p>
+                  <b>1</b>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="righContainer">
+          <div class="header">
+            <div class="imgText">
+              <figure class="userimg">
+                <img
+                  src="../img/albert-einstein.jpeg"
+                  alt="imgUser"
+                  class="cover"
+                />
+              </figure>
+              <h4>Albert Einstein <br /><span>EN LÍNEA</span></h4>
+            </div>
+            <ul class="nav__icon">
+              <li><ion-icon name="search-outline"></ion-icon></li>
+            </ul>
+          </div>
+
+          <!--message box-->
+          <div class="mensaje__box"></div>
+
+          <!-- chat box input-->
+          <div class="chatbox__input">
+            <ion-icon name="happy-outline"></ion-icon>
+            <ion-icon name="attach-outline"></ion-icon>
+            <input type="text" placeholder="Escribe un mensaje" />
+            <ion-icon name="mic-outline"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script src="./script.js" type="module"></script>
   </body>
 </html>

@@ -1,156 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background-image: url(img/imgSignInUp/1.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: #fff;
-}
-
-.container-form {
-  width: 90%;
-  height: 90vh;
-  display: flex;
-  justify-content: space-around;
-  transition: all 0.5s ease-out;
-}
-
-.welcome-back {
-  display: flex;
   align-items: center;
-  text-align: center;
+  min-height: 100vh;
+  background-color: #009688;
+  transition: 0.5s;
 }
 
-.message {
-  padding: 1rem;
+body.active {
+  background-color: #03a9f4;
 }
 
-.message h2 {
-  font-size: 1.7rem;
-  padding: 1rem 0;
+.container {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  margin: 20px;
+  /* display: none; */
 }
 
-.message button {
-  padding: 1rem;
-  font-weight: 400;
-  background-color: #4a4aee;
-  border-radius: 2rem;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font-size: 0.9rem;
-  margin-top: 2rem;
-  transition: all 0.3s ease-in;
-  color: #fff;
-}
-
-.message button:hover {
-  background-color: #6464f8;
-}
-
-.formulario {
-  width: 400px;
-  padding: 1rem;
-  margin: 2rem;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(78, 116, 149, 0.58);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.create-account {
-  padding: 2.7rem 0;
-  font-size: 1.7rem;
-}
-
-.iconos {
-  width: 200px;
-  display: flex;
-  justify-content: space-around;
-  margin: auto;
-}
-
-.border-icon {
-  height: 20px;
-  width: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  border: solid thin white;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  transition: all 0.3s ease-in;
-}
-
-.border-icon:hover {
-  background-color: #4a4aee;
-  cursor: pointer;
-}
-
-.cuenta-gratis {
-  padding: 2rem 0;
-}
-
-.formulario input {
-  width: 70%;
-  display: block;
-  margin: auto;
-  margin-bottom: 2rem;
-  background-color: transparent;
-  border: none;
-  border-bottom: white thin solid;
-  text-align: center;
-  outline: none;
-  padding: 0.2rem 0;
-  font-size: 0.9rem;
-  font-size: 20px;
-  color: rgb(255, 255, 255);
-}
-
-.formulario input::placeholder {
-  color: #fff;
-}
-
-.formulario input[type="submit"] {
-  width: 60%;
-  margin: auto;
-  border: solid thin white;
-  padding: 0.7rem;
-  border-radius: 2rem;
-  background-color: white;
-  font-weight: 600;
-  margin-top: 3rem;
-  font-size: 0.8rem;
-  cursor: pointer;
-  color: #222;
-}
-
-.sign-in {
+.bluebg {
   position: absolute;
-  opacity: 0;
-  visibility: hidden;
+  top: 40px;
+  width: 100%;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
 }
 
-.sign-in.active {
-  opacity: 1;
-  visibility: visible;
+.bluebg .box {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.sign-up.active {
+.bluebg .box h2 {
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.bluebg .box button {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  font-weight: 800;
+  border: none;
+}
+
+.formBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
+  transition: 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.formBx.active {
+  left: 50%;
+}
+
+.formBx .form {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 50px;
+  transition: 0.6s ease-in-out;
+}
+
+.formBx .signinForm {
+  transition-delay: 0.25s;
+}
+
+.formBx.active .signinForm {
+  left: -100%;
+  transition-delay: 0s;
+}
+
+.formBx.active .signupForm {
+  left: 0%;
+  transition-delay: 0s;
+}
+
+.formBx .signupForm {
+  left: -100%;
+  transition-delay: 0.25s;
+}
+
+.formBx .form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.formBx .form h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+.formBx .form form input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  outline: none;
+  font-size: 16px;
+  border: 1px solid #333;
+  font-weight: 600;
+}
+
+.formBx .form form input::placeholder {
+  font-weight: 700;
+}
+
+.formBx .form form input[type="submit"] {
+  background-color: #009688;
+  border: none;
+  color: #fff;
+  max-width: 100px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.formBx.active .signupForm input[type="submit"] {
+  background-color: #03a9f4;
+  font-weight: 600;
+}
+
+.formBx .form form .forgot {
+  color: #333;
+  font-weight: 700;
+}
+
+.hidden {
+  display: none;
+  transition: opacity 0.5s;
   opacity: 0;
-  visibility: hidden;
+  pointer-events: none;
 }
 
 .notification {
@@ -171,4 +184,383 @@ body {
 
 .notification.hide {
   opacity: 0;
+}
+
+.notification2 {
+  position: absolute;
+  top: 85%;
+  right: 20%;
+  padding: 10px;
+  background-color: rgb(17, 181, 45);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.5s;
+  font-weight: 600;
+}
+
+.notification2.show {
+  opacity: 1;
+}
+
+.notification2.hide {
+  opacity: 0;
+}
+
+.desktop {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    #009688 0%,
+    #009688 130px,
+    #d9dbd5 130px,
+    #d9dbd5 100%
+  );
+  /* display: none; */
+}
+
+.desktop2 {
+  position: relative;
+  width: 90%;
+  max-width: 100%;
+  height: 90vh;
+  background: #fff;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.desktop2 .leftContainer {
+  position: relative;
+  flex: 30%;
+  background: #fff;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.leftContainer .header {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background: #ededed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.leftContainer .header .userimg {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.leftContainer .header .userimg .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.leftContainer .header .nav__icon {
+  display: flex;
+}
+
+.header .nav__icon li {
+  display: flex;
+  list-style: none;
+  color: #51585c;
+  font-size: 1.5em;
+  margin-left: 22px;
+  cursor: pointer;
+}
+
+.desktop2 .leftContainer .search__chat {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.desktop2 .leftContainer .search__chat div {
+  width: 100%;
+}
+
+.leftContainer .search__chat div input {
+  width: 100%;
+  outline: none;
+  border: none;
+  background: #fff;
+  padding: 6px;
+  height: 38px;
+  border-radius: 30px;
+  font-size: 14px;
+  padding-left: 40px;
+}
+
+.desktop2 .leftContainer .search__chat div input::-moz-placeholder {
+  color: #bbb;
+}
+
+.leftContainer .search__chat div input::placeholder {
+  color: #bbb;
+}
+
+.leftContainer .search__chat div ion-icon {
+  position: absolute;
+  left: 30px;
+  top: 14px;
+  font-size: 1.2em;
+}
+
+.leftContainer .chatlist {
+  position: relative;
+  height: calc(100% - 110px);
+  overflow-y: auto;
+}
+
+.leftContainer .chatlist .block {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+}
+
+.leftContainer .chatlist .block:hover {
+  background: #ebebeb;
+}
+
+.leftContainer .chatlist .block .imgchat {
+  position: relative;
+  min-width: 45px;
+  height: 45px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.leftContainer .chatlist .block .imgchat .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.leftContainer .chatlist .block .description {
+  position: relative;
+  width: 100%;
+}
+
+.leftContainer .chatlist .block .description .headList {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.leftContainer .chatlist .block .description .headList h4 {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #111;
+}
+
+.leftContainer .chatlist .block .description .headList .time {
+  font-size: 0.75em;
+  color: #aaa;
+}
+
+.leftContainer .chatlist .block .description .message {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leftContainer .chatlist .block .description .message p {
+  color: #aaa;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  font-size: 0.9em;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.leftContainer .chatlist .block .description .message b {
+  background-color: #06d755;
+  color: #fff;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75em;
+}
+
+.desktop2 .righContainer {
+  position: relative;
+  flex: 70%;
+  background: #e5ddd5;
+}
+
+.desktop2 .righContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/pattern.png);
+  opacity: 0.06;
+}
+
+.desktop2 .righContainer .header {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background: #ededed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.desktop2 .righContainer .header .imgText {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.desktop2 .righContainer .header .imgText .userimg {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.desktop2 .righContainer .header .imgText .userimg .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.desktop2 .righContainer .header .imgText h4 {
+  font-weight: 500;
+  line-height: 1.2em;
+  margin-left: 15px;
+}
+
+.righContainer .header .imgText h4 span {
+  font-size: 0.8em;
+  color: #555;
+}
+
+.desktop2 .righContainer .header .nav__icon {
+  display: flex;
+}
+
+.desktop2 .righContainer .header .nav__icon li {
+  display: flex;
+  list-style: none;
+  color: #51585c;
+  font-size: 1.5em;
+  margin-left: 22px;
+  cursor: pointer;
+}
+
+.desktop2 .righContainer .mensaje__box {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 120px);
+}
+
+.desktop2 .righContainer .chatbox__input {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background: #f0f0f0;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.desktop2 .righContainer .chatbox__input ion-icon {
+  cursor: pointer;
+  font-size: 1.8em;
+  color: #51585c;
+}
+
+.desktop2 .righContainer .chatbox__input ion-icon:nth-child(1) {
+  margin-right: 15px;
+}
+
+.righContainer .chatbox__input input {
+  position: relative;
+  width: 90%;
+  margin: 0 20px;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  font-size: 1em;
+}
+
+@media (max-width: 991px) {
+  .container {
+    max-width: 400px;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container .bluebg {
+    top: 0;
+    height: 100%;
+  }
+  .formBx {
+    width: 100%;
+    height: 500px;
+    top: 0;
+    box-shadow: none;
+  }
+  .bluebg .box {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    bottom: 0;
+  }
+  .box.signin {
+    top: 0px;
+  }
+  .formBx.active {
+    left: 0;
+    top: 150px;
+  }
+}
+
+.borrar {
+  display: none;
 }

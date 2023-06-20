@@ -1,53 +1,99 @@
-import getUsers from "../services/getUsers.js";
 import { URL_API } from "../services/dataUsers.js";
-import popNotification from "../modules/popNotification.js";
+import getUsers from "../services/getUsers.js";
+import {
+  popNotification,
+  popNotification2,
+} from "../modules/popNotification.js";
+import {
+  celInput,
+  nextInput,
+  passwordInput,
+  loginInput,
+  form2,
+  form,
+  desktop,
+  container,
+} from "../modules/dataDom.js";
 
-async function validateUser(event) {
+export const validateUser = async (event) => {
   event.preventDefault();
 
-  const cellNumberInput = document.getElementById("celphone");
-  const passwordInput = document.getElementById("password");
-
-  const cellNumber = cellNumberInput.value;
-  const password = passwordInput.value;
-  // console.log(cellNumber);
-  // console.log(password);
-
-  let cellNumberActivo = null;
-  let mostrarError = true;
-
   try {
-    const usuarios = await getUsers(URL_API);
-    console.log(usuarios);
-    for (const usuario of usuarios) {
-      console.log(usuario.Celphone);
-      if (usuario.Celphone == cellNumber) {
-        if (usuario.password == password) {
-          cellNumberActivo = usuario;
-          console.log(usuario.Celphone);
-          mostrarError = false;
-          break; // Salir del bucle una vez encontrado el usuario válido
-        } else {
-          popNotification("Oops!! Contrasela incorrecta");
-        }
-      }
-    }
+    // Obtener los usuarios desde el servidor
+    const response = await getUsers(URL_API);
+    const users = response; // response ya contiene los datos de usuarios, no es necesario acceder a response.data
 
-    if (cellNumberActivo) {
-      location.href = "././pages/online.html";
+    const enteredCel = Number(celInput.value);
+
+    // Encontrar el usuario con el número de celular correspondiente
+    const foundCel = users.find((user) => user.Celphone === enteredCel);
+
+    if (foundCel) {
+      //console.log("User information:", foundCel);
+      removHiddenPwd();
+      popNotification2("Enter password");
+      form2.addEventListener("submit", (e) => {
+        e.preventDefault();
+        validPwd(users);
+      });
+      // Realizar las acciones necesarias con la información del usuario encontrado
     } else {
-      if (mostrarError) {
-        console.log("errorhola");
-        popNotification("Oops!! Usuario incorrecto");
-        cellNumberInput.value = "";
-        passwordInput.value = "";
-      }
+      //console.log("Number not found in the array:", enteredCel);
+      popNotification("Enter a valid username");
+      addHiddenPwd();
     }
   } catch (error) {
-    console.log("hola error");
+    console.error("Error fetching user data:", error);
   }
-}
+};
 
+<<<<<<< HEAD
 export default validateUser;
 
 
+=======
+const validPwd = (users) => {
+  const enteredPwd = Number(passwordInput.value);
+  const foundPwd = users.find((user) => user.password === enteredPwd);
+  if (foundPwd) {
+    const userSesion = JSON.stringify(foundPwd);
+    localStorage.setItem("foundPwd", userSesion);
+    versosial();
+    seeDesktop();
+  } else {
+    popNotification("Incorrect password");
+    form.reset();
+    form2.reset();
+    addHiddenPwd();
+    seeSegnin();
+  }
+};
+
+const addHiddenPwd = () => {
+  passwordInput.classList.add("hidden");
+  loginInput.classList.add("hidden");
+  nextInput.classList.remove("hidden");
+};
+
+const removHiddenPwd = () => {
+  passwordInput.classList.remove("hidden");
+  loginInput.classList.remove("hidden");
+  nextInput.classList.add("hidden");
+};
+
+export const seeSegnin = () => {
+  container.classList.remove("borrar");
+  desktop.classList.add("borrar");
+};
+
+const seeDesktop = () => {
+  container.classList.add("borrar");
+  desktop.classList.remove("borrar");
+};
+
+const versosial = () => {
+  const storedArrayString = localStorage.getItem("foundPwd");
+  const storedArray = JSON.parse(storedArrayString);
+  console.log(storedArray);
+};
+>>>>>>> 9cef58aa07694b95a7cad566d433f9c9f1f861c9
