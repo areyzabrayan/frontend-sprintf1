@@ -1,6 +1,6 @@
 import { URL_API } from "./services/dataUsers.js";
 import getUsers from "./services/getUsers.js";
-import  newUser  from "./services/newUser.js";
+import newUser2 from "./modules/newUser2.js";
 import { validateUser, seeSegnin } from "./services/validateUser.js";
 
 //toggleSignInUp();
@@ -16,9 +16,7 @@ bluebg.addEventListener("click", toggleSignInUp);
 
 form.addEventListener("submit", validateUser);
 
-form3.addEventListener("submit", (event)=>{
-    newUser(event);
-});
+// form3.addEventListener("submit", newUser2);
 
 //----VALIDAR REGISTRO USUARIO
 

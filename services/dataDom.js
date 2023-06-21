@@ -16,12 +16,9 @@ export const container = document.querySelector(".container");
 export const desktop = document.querySelector(".desktop");
 
 // Formulario de Registro usuario
-
 export const form3 = document.querySelector("#form3");
 export const nameR = document.querySelector("#nameR");
 export const celphoneR = document.querySelector("#celphoneR");
 export const passwordR = document.querySelector("#passwordR");
 export const urlR = document.querySelector("#urlR");
 export const registrarseInput = document.querySelector("#registrarse");
-
-
