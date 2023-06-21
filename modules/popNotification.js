@@ -1,20 +1,27 @@
 // notification mensaje
 export const popNotification = (message) => {
-  const notification = document.querySelector(".notification");
-  notification.textContent = message;
-  notification.classList.add("show");
+  const notification = document.querySelectorAll(".notification");
+  notification.forEach(element => {
+    element.textContent = message;
+    element.classList.add("show");
 
   setTimeout(() => {
-    notification.classList.remove("show");
+    element.classList.remove("show");
   }, 3000);
+  });
+  
 };
 
 export const popNotification2 = (message) => {
-  const notification = document.querySelector(".notification2");
-  notification.textContent = message;
-  notification.classList.add("show");
-
-  setTimeout(() => {
-    notification.classList.remove("show");
-  }, 3000);
+  const notification = document.querySelectorAll(".notification2");
+  console.log(notification);
+  Array.from(notification).forEach(element => {
+    element.textContent = message;
+    element.classList.add("show");
+  
+    setTimeout(() => {
+      element.classList.remove("show");
+    }, 3000);
+  });
+ 
 };
