@@ -51,10 +51,14 @@ const validPwd = (users) => {
   const enteredPwd = Number(passwordInput.value);
   const foundPwd = users.find((user) => user.password === enteredPwd);
   if (foundPwd) {
-    const userSesion = JSON.stringify(foundPwd);
-    localStorage.setItem("foundPwd", userSesion);
-    versosial();
+    const saveLocalUser = foundPwd;
+    const userLocal = JSON.stringify(saveLocalUser);
+    localStorage.setItem("saveLocalUser", userLocal);
+    const userOnline = seeLocal();
+    console.log(userOnline);
     seeDesktop();
+    const welcome = seeLocal();
+    popNotification2(`Welcome... ${welcome}`);
   } else {
     popNotification("Incorrect password");
     form.reset();
@@ -86,8 +90,8 @@ const seeDesktop = () => {
   desktop.classList.remove("borrar");
 };
 
-const versosial = () => {
-  const storedArrayString = localStorage.getItem("foundPwd");
+export const seeLocal = () => {
+  const storedArrayString = localStorage.getItem("saveLocalUser");
   const storedArray = JSON.parse(storedArrayString);
-  console.log(storedArray);
+  return storedArray.Nombre;
 };

@@ -22,3 +22,9 @@ export const celphoneR = document.querySelector("#celphoneR");
 export const passwordR = document.querySelector("#passwordR");
 export const urlR = document.querySelector("#urlR");
 export const registrarseInput = document.querySelector("#registrarse");
+
+// Image profile.
+export let imgOnline = document.querySelector(".userimg");
+
+// Box contact
+export let chatlist = document.querySelector(".chatlist");
