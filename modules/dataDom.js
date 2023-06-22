@@ -24,4 +24,6 @@ export const passwordR = document.querySelector("#passwordR");
 export const urlR = document.querySelector("#urlR");
 export const registrarseInput = document.querySelector("#registrarse");
 
+// Boton editar y salir de seccion
+
 

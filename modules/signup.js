@@ -9,40 +9,44 @@ const createUser = async (form) => {
 
     const newUser = {};
     const newUserInput = form.querySelectorAll(".input input");
-    Array.from(newUserInput).forEach((item) => {
+    Array.from(newUserInput).map((item) => {
       newUser[item.id] = item.value;
     });
 
-    const nameExists = usuarios.some((user) => user.Nombre === newUser.name);
-    if (nameExists) {
-      alert("El nombre ya existe");
-      return;
-    }
-   const numberExists = usuarios.some((user) => user.Celphone === newUser.number);
-    if (numberExists) {
-      alert("Número de celular ya registrado");
-      return;
-    }
-
-    const passwordExists = usuarios.some((user) => user.password === newUser.password);
-    if (passwordExists) {
-      alert("La contraseña ya existe");
-      return;
-    }
-
-    const urlExists = usuarios.some((user) => user.url === newUser.url);
-    if (urlExists) {
-      alert("La URL de imagen ya existe");
+    const userExists = usuarios.find((user) => user.Nombre === newUser.name || user.Celphone === newUser.number || user.password === newUser.password );
+    if (userExists) {
+      Swal.fire(
+        'Oops!',
+        'Campo Existente!',
+      );
       return;
     }
 
     console.log(newUser);
     form.reset();
+
+    addToUsers(newUser); 
   } catch (error) {
     console.log(error);
     alert("Ha ocurrido un error al crear el usuario");
   }
 };
+
+
+const addToUsers = (newUser) => {
+  axios.post(UsuariosURL, newUser, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then((response) => {
+      alert('Elemento agregado a Usuarios:', response.data);
+    })
+    .catch((error) => {
+      console.log('Error al agregar elemento a Usuarios:', error);
+    });
+};
+
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();

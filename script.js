@@ -20,9 +20,27 @@ form3.addEventListener("submit", (event)=>{
     newUser(event);
 });
 
-//----VALIDAR REGISTRO USUARIO
+document.addEventListener("click",(event)=>{
+    if (event.target.classList.contains("goOption")) {
+        const actions = document.querySelector('.option-edit');
+        console.log(actions);
+        actions.classList.toggle("active");
+    }
+})
 
-// const registerForm = document.querySelector(".formulario");
-// registerForm.addEventListener("submit", (event) => {
-//   newUser(event);
-// });
+document.addEventListener("click", (event)=>{
+    if (event.target.classList.contains("first")) {
+        console.log('hice click');
+        const actions = document.querySelector('.visual');
+        console.log(actions);
+        actions.classList.toggle("active2");
+    }
+})
+document.addEventListener("click", (event)=>{
+    if (event.target.classList.contains("arrow")) {
+        console.log('hice click');
+        const actions = document.querySelector('.visual');
+        console.log(actions);
+        actions.classList.toggle("active2");
+    }
+})
