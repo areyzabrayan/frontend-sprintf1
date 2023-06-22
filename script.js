@@ -16,7 +16,6 @@ form.addEventListener("submit", (event) => {
   validateUser(event);
 });
 
-<<<<<<< HEAD
 //----VALIDAR REGISTRO USUARIO
 form3.addEventListener("submit", (event) => {
   newUser(event);
@@ -27,29 +26,29 @@ document.addEventListener("DOMContentLoaded", async () => {
   printImgOnline(urlOnline);
   printContacts();
 });
-=======
-document.addEventListener("click",(event)=>{
-    if (event.target.classList.contains("goOption")) {
-        const actions = document.querySelector('.option-edit');
-        console.log(actions);
-        actions.classList.toggle("active");
-    }
-})
 
-document.addEventListener("click", (event)=>{
-    if (event.target.classList.contains("first")) {
-        console.log('hice click');
-        const actions = document.querySelector('.visual');
-        console.log(actions);
-        actions.classList.toggle("active2");
-    }
-})
-document.addEventListener("click", (event)=>{
-    if (event.target.classList.contains("arrow")) {
-        console.log('hice click');
-        const actions = document.querySelector('.visual');
-        console.log(actions);
-        actions.classList.toggle("active2");
-    }
-})
->>>>>>> brayan/descktop
+document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("goOption")) {
+    const actions = document.querySelector(".option-edit");
+    console.log(actions);
+    actions.classList.toggle("active");
+  }
+});
+
+document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("first")) {
+    console.log("hice click");
+    const actions = document.querySelector(".visual");
+    console.log(actions);
+    actions.classList.toggle("active2");
+  }
+});
+
+document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("arrow")) {
+    console.log("hice click");
+    const actions = document.querySelector(".visual");
+    console.log(actions);
+    actions.classList.toggle("active2");
+  }
+});
