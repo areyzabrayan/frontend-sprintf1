@@ -236,6 +236,7 @@ body.active {
   flex: 30%;
   background: #fff;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .leftContainer .header {
@@ -410,6 +411,108 @@ body.active {
   justify-content: center;
   align-items: center;
   font-size: 0.75em;
+}
+.desktop2 .option-edit{
+  position: absolute;
+  top: 35px;
+  left: 160px;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 2;
+  background-color: #b7dbec;
+  display: flex;
+  flex-direction: column;
+ 
+}
+.option-edit{
+  visibility: hidden;
+}
+.option-edit .first{
+  color: black;
+  font-weight: 1000;
+  cursor: pointer;
+  
+}
+.option-edit .first:hover{
+  text-decoration: underline;
+  transform: scale(1.2);
+}
+.option-edit .second:hover{
+  text-decoration: underline;
+  transform: scale(1.2);
+}
+.option-edit .second{
+  color: black;
+  font-weight: 1000;
+  cursor: pointer;
+}
+.active{
+  visibility: visible;
+}
+.desktop2 .editContainer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 295px;
+  height: 562.5px;
+  z-index: 3;
+  background-color: #d9dbd5;
+}
+.visual{
+  display: none;
+}
+.active2{
+  display: block;
+}
+.editContainer__nav{
+  background-color: #009688 ;
+  border: 1px solid #e5ddd5;
+  display: flex;
+  padding-top: 35px;
+  color: #fff;
+  gap: 8px;
+}
+.editContainer__nav .arrow:hover{
+  cursor: pointer;
+}
+.editContainer__img{
+  background-color: #555;
+  padding: 15px;
+  margin-top: 40px;
+  border-radius: 200px;
+  display: flex;
+  flex-direction: column;
+  text-align: center ;
+}
+.editContainer__img .camera{
+  color: #ebebeb;
+}
+.editContainer__img input{
+  border:none;
+  background-color: #555;
+}
+.editContainer__img input::placeholder{
+  color: #ebebeb;
+  text-align: center;
+}
+.editContainer__name{
+  background-color: white;
+  color: grey;
+  margin-top: 20px;
+}
+.editContainer__name-edit .box{
+background-color: white;
+}
+.editContainer__name-edit div{
+  display: flex;
+  gap: 5px;
+}
+.editContainer__name-edit input{
+  border: none;
+}
+.editContainer__name-edit  input::placeholder{
+  font-weight: 1000;
+  color: #111;
 }
 
 .desktop2 .righContainer {
