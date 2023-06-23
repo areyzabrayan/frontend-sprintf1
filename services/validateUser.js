@@ -58,7 +58,7 @@ const validPwd = (users) => {
     console.log(userOnline);
     seeDesktop();
     const welcome = seeLocal();
-    popNotification2(`Welcome... ${welcome}`);
+    popNotification2(`Welcome back ${welcome}`);
   } else {
     popNotification("Incorrect password");
     form.reset();
