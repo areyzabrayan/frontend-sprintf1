@@ -72,7 +72,7 @@ document.addEventListener("click", (event)=>{
         const actions = document.querySelector('.show');
         console.log(actions);
         actions.classList.toggle("show2");
-    }
+    }   
 })
 document.addEventListener("click", (event)=>{
     if (event.target.classList.contains("second")) {

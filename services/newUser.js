@@ -47,6 +47,7 @@ const addToUsers = (newUser) => {
     .then((response) => {
       console.log(response);
       alert("Elemento agregado a Usuarios:", response.data);
+      console.log(response.data);
     })
     .catch((error) => {
       console.log("Error al agregar elemento a Usuarios:", error);

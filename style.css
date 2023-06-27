@@ -572,7 +572,7 @@ body.active {
   position: absolute;
   top: 0;
   left: 0;
-  width: 295px;
+  width: 370px;
   height: 562.5px;
   z-index: 3;
   background-color: #d9dbd5;
@@ -597,7 +597,7 @@ body.active {
 .editContainer__img {
   background-color: #555;
   padding: 15px;
-  margin-left: 70px;
+  margin-left: 120px;
   margin-right: 0px;
   height: 150px;
   width: 150px;
@@ -772,6 +772,9 @@ body.active {
   gap: 15px;
   padding-bottom: 27px;
   padding-top: 8px;
+}
+.nav__icon .search-outline:hover{
+  cursor: pointer;
 }
 .searchContainer__nav .closeSearch:hover{
   cursor: pointer;
