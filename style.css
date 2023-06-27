@@ -10,7 +10,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #009688;
+  /* background-color: #009688; */
+  background-color: #960000;
   transition: 0.5s;
 }
 
