@@ -23,13 +23,8 @@ export const passwordR = document.querySelector("#passwordR");
 export const urlR = document.querySelector("#urlR");
 export const registrarseInput = document.querySelector("#registrarse");
 
-<<<<<<< HEAD
 // Image profile.
 export let imgOnline = document.querySelector(".userimg");
-=======
-// Boton editar y salir de seccion
-
->>>>>>> brayan/descktop
 
 // Box contact
 export let chatlist = document.querySelector(".chatlist");
