@@ -10,8 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  /* background-color: #009688; */
-  background-color: #960000;
+  background-color: #009688;
   transition: 0.5s;
 }
 
@@ -569,15 +568,7 @@ body.active {
 .active {
   visibility: visible;
 }
-.desktop2 .editContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 295px;
-  height: 562.5px;
-  z-index: 3;
-  background-color: #d9dbd5;
-}
+
 .visual {
   display: none;
 }
