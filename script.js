@@ -7,6 +7,8 @@ import { bluebg, form, form3 } from "./modules/dataDom.js";
 import { local, printImgOnline } from "./modules/userOnline.js";
 import { printContacts } from "./modules/printContacts.js";
 
+
+
 seeSegnin();
 
 bluebg.addEventListener("click", toggleSignInUp);
@@ -28,6 +30,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   printImgOnline(urlOnline);
   printContacts();
 });
+
+
 document.addEventListener("click",(event)=>{
     if (event.target.classList.contains("goOption")) {
         const actions = document.querySelector('.option-edit');
@@ -38,9 +42,9 @@ document.addEventListener("click",(event)=>{
 
 document.addEventListener("click", (event)=>{
     if (event.target.classList.contains("first")) {
-        console.log('hice click');
+        // console.log('hice click');
         const actions = document.querySelector('.visual');
-        console.log(actions);
+        // console.log(actions);
         actions.classList.toggle("active2");
     }
 })

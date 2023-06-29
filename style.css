@@ -536,13 +536,14 @@ body.active {
 .desktop .option-edit {
   position: absolute;
   top: 35px;
-  left: 160px;
+  left: 240px;
   padding: 20px;
   border-radius: 10px;
   z-index: 2;
   background-color: #b7dbec;
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 .option-edit {
   visibility: hidden;
@@ -597,6 +598,24 @@ body.active {
 }
 .editContainer__nav .arrow:hover {
   cursor: pointer;
+}
+.editContainer__name{
+  display: flex;
+  justify-content: center;
+}
+.editContainer__name-edit{
+  display: flex;
+  justify-content: space-between;
+  width: 370px;
+}
+.editContainer__name-edit .change:hover{
+  cursor: pointer;
+}
+.editContainer__name-edit .changeName{
+  padding-left: 30px;
+}
+.editContainer__name-edit .changeName:focus{
+outline: none;
 }
 .editContainer__img {
   background-color: #555;
@@ -801,6 +820,9 @@ body.active {
 .searchContainer__filter input::placeholder{
   font-weight: 1000;
   color: #111;
+}
+.searchContainer__filter .lupa:hover{
+  cursor: pointer;
 }
 .searchContainer__showFilter{
   display: flex;
