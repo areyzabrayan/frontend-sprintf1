@@ -6,7 +6,7 @@ import { toggleSignInUp } from "./modules/toggleSignInUp.js";
 import { bluebg, form, form3 } from "./modules/dataDom.js";
 import { local, printImgOnline } from "./modules/userOnline.js";
 import { printContacts } from "./modules/printContacts.js";
-import { printName } from "./modules/editContianer.js";
+import { printName } from "././app./scripts./modules/editContianer.js";
 
 
 
