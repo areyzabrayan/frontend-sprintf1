@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/app/scripts/modules/editContianer.js
 // import { seeLocal } from "../services/validateUser.js";
 // import getUsers from "../services/getUsers.js";
 // import { editContainerVisual, nameEditUser } from "./dataDom.js";
@@ -34,13 +35,15 @@
 // }
 
 // printName(seeLocal);
+=======
+>>>>>>> brayan/descktop:modules/editContianer.js
 
 import { seeLocal } from "../services/validateUser";
 console.log(seeLocal);
 import { nameEdituser, changeName } from "./dataDom";
 console.log("estoy aqui");
 
-const printName = () => {
+export const printName = () => {
   const storedName = seeLocal();
   if (storedName) {
     nameEdituser.setAttribute("value", storedName);
@@ -48,4 +51,10 @@ const printName = () => {
   }
 };
 
+<<<<<<< HEAD:src/app/scripts/modules/editContianer.js
 printName();
+=======
+
+
+  
+>>>>>>> brayan/descktop:modules/editContianer.js
