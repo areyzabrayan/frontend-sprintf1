@@ -9,6 +9,7 @@ import { bluebg, form, form3 } from "./scripts/modules/dataDom";
 import { local, printImgOnline } from "./scripts/modules/userOnline";
 import { printContacts } from "./scripts/modules/printContacts";
 import "./style/style.css";
+import { printName } from "./scripts/modules/editContianer";
 
 seeSegnin();
 
@@ -86,3 +87,5 @@ document.addEventListener("click", (event) => {
     window.location.reload();
   }
 });
+
+printName()
