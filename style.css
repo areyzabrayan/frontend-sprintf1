@@ -536,14 +536,13 @@ body.active {
 .desktop .option-edit {
   position: absolute;
   top: 35px;
-  left: 240px;
+  left: 160px;
   padding: 20px;
   border-radius: 10px;
   z-index: 2;
   background-color: #b7dbec;
   display: flex;
   flex-direction: column;
-  gap: 15px;
 }
 .option-edit {
   visibility: hidden;
@@ -569,7 +568,6 @@ body.active {
 .active {
   visibility: visible;
 }
-<<<<<<< HEAD
 .desktop .editContainer {
   position: absolute;
   top: 0;
@@ -579,9 +577,6 @@ body.active {
   z-index: 3;
   background-color: #d9dbd5;
 }
-=======
-
->>>>>>> 566040e7f0c5c14e5ff1ae92cf29bcaf2ede2e06
 .visual {
   display: none;
 }
@@ -598,24 +593,6 @@ body.active {
 }
 .editContainer__nav .arrow:hover {
   cursor: pointer;
-}
-.editContainer__name{
-  display: flex;
-  justify-content: center;
-}
-.editContainer__name-edit{
-  display: flex;
-  justify-content: space-between;
-  width: 370px;
-}
-.editContainer__name-edit .change:hover{
-  cursor: pointer;
-}
-.editContainer__name-edit .changeName{
-  padding-left: 30px;
-}
-.editContainer__name-edit .changeName:focus{
-outline: none;
 }
 .editContainer__img {
   background-color: #555;
@@ -820,9 +797,6 @@ outline: none;
 .searchContainer__filter input::placeholder{
   font-weight: 1000;
   color: #111;
-}
-.searchContainer__filter .lupa:hover{
-  cursor: pointer;
 }
 .searchContainer__showFilter{
   display: flex;
