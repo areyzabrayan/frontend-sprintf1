@@ -12,7 +12,7 @@ export const popNotification = (message) => {
 };
 
 export const popNotification2 = (message) => {
-  const notification = document.querySelectorAll(".notification2");
+  let notification = document.querySelectorAll(".notification2");
   Array.from(notification).forEach((element) => {
     element.textContent = message;
     element.classList.add("show");

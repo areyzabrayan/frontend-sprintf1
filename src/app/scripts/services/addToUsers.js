@@ -1,4 +1,5 @@
-import { URL_API } from "./dataUsers.js";
+import axios from "axios";
+import { URL_API } from "./dataUsers";
 
 const addToUsers = (newUser) => {
   axios

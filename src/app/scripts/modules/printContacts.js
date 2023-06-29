@@ -1,6 +1,6 @@
-import getUsers from "../services/getUsers.js";
-import { chatlist } from "./dataDom.js";
-import { URL_API } from "../services/dataUsers.js";
+import getUsers from "../services/getUsers";
+import { chatlist } from "./dataDom";
+import { URL_API } from "../services/dataUsers";
 
 export const printContacts = async () => {
   try {

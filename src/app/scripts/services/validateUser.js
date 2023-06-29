@@ -1,9 +1,6 @@
-import { URL_API } from "./dataUsers.js";
-import getUsers from "./getUsers.js";
-import {
-  popNotification,
-  popNotification2,
-} from "../../../../modules/popNotification.js";
+import { URL_API } from "./dataUsers";
+import getUsers from "./getUsers";
+import { popNotification, popNotification2 } from "../modules/popNotification";
 import {
   celInput,
   nextInput,
@@ -13,7 +10,7 @@ import {
   form,
   desktop,
   container,
-} from "../../../../modules/dataDom.js";
+} from "../modules/dataDom";
 
 export const validateUser = async (event) => {
   event.preventDefault();
@@ -31,6 +28,7 @@ export const validateUser = async (event) => {
     if (foundCel) {
       //console.log("User information:", foundCel);
       removHiddenPwd();
+      console.log("Enter password");
       popNotification2("Enter password");
       form2.addEventListener("submit", (e) => {
         e.preventDefault();

@@ -606,7 +606,7 @@ body.active {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center ;
+  text-align: center;
 }
 .editContainer__img .camera {
   color: #ebebeb;
@@ -755,7 +755,7 @@ body.active {
   border-radius: 30px;
   font-size: 1em;
 }
-.desktop .searchContainer{
+.desktop .searchContainer {
   background-color: #f6f5f5;
   position: absolute;
   top: 0px;
@@ -763,23 +763,23 @@ body.active {
   width: 295px;
   height: 562.5px;
 }
-.show{
+.show {
   display: none;
 }
 
-.searchContainer__nav{
+.searchContainer__nav {
   display: flex;
   gap: 15px;
   padding-bottom: 27px;
   padding-top: 8px;
 }
-.nav__icon .search-outline:hover{
+.nav__icon .search-outline:hover {
   cursor: pointer;
 }
-.searchContainer__nav .closeSearch:hover{
+.searchContainer__nav .closeSearch:hover {
   cursor: pointer;
 }
-.searchContainer__filter{
+.searchContainer__filter {
   display: flex;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.983);
@@ -790,37 +790,34 @@ body.active {
   margin-left: 10px;
   border-radius: 30px;
 }
-.searchContainer__filter input{
+.searchContainer__filter input {
   border: none;
   width: 290px;
 }
-.searchContainer__filter input::placeholder{
+.searchContainer__filter input::placeholder {
   font-weight: 1000;
   color: #111;
 }
-.searchContainer__showFilter{
+.searchContainer__showFilter {
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-top: 15px;
   padding: 10px;
   background-color: #ffff;
-  
 }
-.searchContainer__showFilter h5{
+.searchContainer__showFilter h5 {
   font-size: 1000;
   font-weight: 1000;
   color: black;
-  
 }
-.searchContainer__showFilter p{
+.searchContainer__showFilter p {
   font-size: 900;
   font-weight: 900;
   color: #555;
   border-bottom: 1px solid rgb(21, 69, 21);
-
 }
-.show2{
+.show2 {
   display: block;
 }
 @media (max-width: 991px) {

@@ -1,4 +1,4 @@
-import { imgOnline } from "./dataDom.js";
+import { imgOnline } from "./dataDom";
 
 export const printImgOnline = (userOnline) => {
   let container = imgOnline;

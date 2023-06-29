@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const getUsers = async (url) => {
   try {
     const { data } = await axios.get(url);

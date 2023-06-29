@@ -8,15 +8,15 @@
 
 // const printname = () => {
 //   nameEdit.addEventListener('click', seeLocal);
-  
+
 //   const editContainer = document.querySelector('.editContainer');
 //   const visualElement = editContainer.querySelector('.visual');
 //   const nameInputElement = document.createElement('input');
-  
+
 //   nameInputElement.type = 'text';
 //   nameInputElement.className = 'nameEdituser';
 //   nameInputElement.placeholder = userName;
-  
+
 //   visualElement.querySelector('.editContainer__name').appendChild(nameInputElement);
 // }
 
@@ -35,19 +35,17 @@
 
 // printName(seeLocal);
 
-import { seeLocal } from "../services/validateUser.js";
+import { seeLocal } from "../services/validateUser";
 console.log(seeLocal);
-import { nameEdituser, changeName } from "./dataDom.js";
-console.log('estoy aqui');
+import { nameEdituser, changeName } from "./dataDom";
+console.log("estoy aqui");
 
 const printName = () => {
   const storedName = seeLocal();
   if (storedName) {
-    nameEdituser.setAttribute('value', storedName);
-    changeName.setAttribute('value', storedName);
+    nameEdituser.setAttribute("value", storedName);
+    changeName.setAttribute("value", storedName);
   }
 };
 
 printName();
-
-  

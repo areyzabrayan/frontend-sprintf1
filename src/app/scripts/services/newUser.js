@@ -1,17 +1,8 @@
-import getUsers from "./getUsers.js";
-import {
-  popNotification,
-  popNotification2,
-} from "../../../../modules/popNotification.js";
-import {
-  form3,
-  nameR,
-  celphoneR,
-  passwordR,
-  urlR,
-} from "../../../../modules/dataDom.js";
-import { URL_API } from "./dataUsers.js";
-import addToUsers from "./addToUsers.js";
+import getUsers from "./getUsers";
+import { popNotification, popNotification2 } from "../modules/popNotification";
+import { form3, nameR, celphoneR, passwordR, urlR } from "../modules/dataDom";
+import { URL_API } from "./dataUsers";
+import addToUsers from "./addToUsers";
 
 const newUser = async (event) => {
   event.preventDefault();

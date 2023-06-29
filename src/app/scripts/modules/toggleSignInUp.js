@@ -1,7 +1,7 @@
-import { signinBton } from "./dataDom.js";
-import { signupBton } from "./dataDom.js";
-import { formBx } from "./dataDom.js";
-import { body } from "./dataDom.js";
+import { signinBton } from "./dataDom";
+import { signupBton } from "./dataDom";
+import { formBx } from "./dataDom";
+import { body } from "./dataDom";
 
 export const toggleSignInUp = (event) => {
   const botonPresionado = event.target;

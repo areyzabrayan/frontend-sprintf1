@@ -29,27 +29,19 @@ export let imgOnline = document.querySelector(".userimg");
 // Box contact
 export let chatlist = document.querySelector(".chatlist");
 
-// Box edit 
-export let editContainerVisual = document.querySelector(".editContainer visual");
-
+// Box edit
+export let editContainerVisual = document.querySelector(
+  ".editContainer visual"
+);
 
 // Input nombre de usuario
 
 export const first = document.querySelector(".first");
-export const editContainer__name = document.querySelector(".editContainer__name");
+export const editContainer__name = document.querySelector(
+  ".editContainer__name"
+);
 export const change = document.querySelector(".change");
 
- 
-export const  nameEdituser= document.querySelector(".nameEdituser");
+export const nameEdituser = document.querySelector(".nameEdituser");
 
-export const  changeName = document.querySelector(".changeName")
-
-
-
-
-
-
-
-
-
-
+export const changeName = document.querySelector(".changeName");
