@@ -1,9 +1,9 @@
 import { imgOnline } from "./dataDom";
 
-export const printImgOnline = (userOnline) => {
+export const printImgOnline = () => {
   let container = imgOnline;
   container.innerHTML = `
-    <img src="${userOnline}" alt="imgUser" class="cover" />
+    <img src="${local()}" alt="imgUser" class="cover" />
     `;
 };
 

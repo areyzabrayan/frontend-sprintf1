@@ -27,8 +27,7 @@ form3.addEventListener("submit", (event) => {
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const urlOnline = local();
-  printImgOnline(urlOnline);
+  // printImgOnline();
   printContacts();
 });
 
