@@ -46,23 +46,4 @@ const newUser = async (event) => {
   }
 };
 
-<<<<<<< HEAD
-const addToUsers = (newUser) => {
-  axios
-    .post(URL_API, newUser, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-    .then((response) => {
-      console.log(response);
-      alert("Elemento agregado a Usuarios:", response.data);
-    })
-    .catch((error) => {
-      console.log("Error al agregar elemento a Usuarios:", error);
-    });
-};
-
-=======
->>>>>>> 566040e7f0c5c14e5ff1ae92cf29bcaf2ede2e06
 export default newUser;
