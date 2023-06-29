@@ -1,7 +1,17 @@
 import getUsers from "../services/getUsers.js";
-import { popNotification, popNotification2 } from "../modules/popNotification.js";
-import { form3, nameR, celphoneR, passwordR, urlR } from "../modules/dataDom.js";
+import {
+  popNotification,
+  popNotification2,
+} from "../modules/popNotification.js";
+import {
+  form3,
+  nameR,
+  celphoneR,
+  passwordR,
+  urlR,
+} from "../modules/dataDom.js";
 import { URL_API } from "../services/dataUsers.js";
+import addToUsers from "./addToUsers.js";
 
 const newUser = async (event) => {
   event.preventDefault();
@@ -30,13 +40,13 @@ const newUser = async (event) => {
     };
 
     form3.reset();
-
     addToUsers(newUser);
   } catch (error) {
     console.log(error);
   }
 };
 
+<<<<<<< HEAD
 const addToUsers = (newUser) => {
   axios
     .post(URL_API, newUser, {
@@ -54,8 +64,6 @@ const addToUsers = (newUser) => {
     });
 };
 
+=======
+>>>>>>> 566040e7f0c5c14e5ff1ae92cf29bcaf2ede2e06
 export default newUser;
-
-
-
- 

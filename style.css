@@ -568,6 +568,7 @@ body.active {
 .active {
   visibility: visible;
 }
+<<<<<<< HEAD
 .desktop .editContainer {
   position: absolute;
   top: 0;
@@ -577,6 +578,9 @@ body.active {
   z-index: 3;
   background-color: #d9dbd5;
 }
+=======
+
+>>>>>>> 566040e7f0c5c14e5ff1ae92cf29bcaf2ede2e06
 .visual {
   display: none;
 }
