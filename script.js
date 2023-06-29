@@ -14,6 +14,8 @@ bluebg.addEventListener("click", toggleSignInUp);
 form.addEventListener("submit", (event) => {
   localStorage.clear();
   validateUser(event);
+  printImgOnline(urlOnline);
+  printContacts();
 });
 
 //----VALIDAR REGISTRO USUARIO
