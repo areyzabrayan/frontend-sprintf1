@@ -1,15 +1,11 @@
-import newUser from "./scripts/services/newUser";
-import {
-  validateUser,
-  seeSegnin,
-  seeLocal,
-} from "./scripts/services/validateUser";
-import { toggleSignInUp } from "./scripts/modules/toggleSignInUp";
-import { bluebg, form, form3 } from "./scripts/modules/dataDom";
-import { local, printImgOnline } from "./scripts/modules/userOnline";
-import { printContacts } from "./scripts/modules/printContacts";
-import "./style/style.css";
-import { printName } from "./scripts/modules/editContianer";
+import newUser from "./services/newUser";
+import { validateUser, seeSegnin, seeLocal } from "./services/validateUser";
+import { toggleSignInUp } from "./modules/toggleSignInUp";
+import { bluebg, form, form3 } from "./modules/dataDom";
+import { local, printImgOnline } from "./modules/userOnline";
+import { printContacts } from "./modules/printContacts";
+import "../style/style.scss";
+import { printName } from "./modules/editContianer";
 
 seeSegnin();
 
