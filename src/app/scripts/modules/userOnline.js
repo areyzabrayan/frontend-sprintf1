@@ -10,5 +10,6 @@ export const printImgOnline = () => {
 export const local = () => {
   const storedArrayString = localStorage.getItem("saveLocalUser");
   const storedArray = JSON.parse(storedArrayString);
-  
+  const userOnline = storedArray.Url_image;
+  return userOnline;
 };

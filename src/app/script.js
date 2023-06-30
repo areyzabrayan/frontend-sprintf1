@@ -28,7 +28,6 @@ form3.addEventListener("submit", (event) => {
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
-  // printImgOnline();
   printContacts();
 });
 
@@ -87,5 +86,3 @@ document.addEventListener("click", (event) => {
     window.location.reload();
   }
 });
-
-printName()
