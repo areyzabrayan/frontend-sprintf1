@@ -2,7 +2,7 @@ import getUsers from "./getUsers";
 import { popNotification, popNotification2 } from "../modules/popNotification";
 import { form3, nameR, celphoneR, passwordR, urlR } from "../modules/dataDom";
 import { URL_API } from "./dataUsers";
-import addToUsers from "./addToUsers";
+import postData from "./postData";
 
 const newUser = async (event) => {
   event.preventDefault();
@@ -31,7 +31,7 @@ const newUser = async (event) => {
     };
 
     form3.reset();
-    addToUsers(newUser);
+    postData(newUser, URL_API);
   } catch (error) {
     console.log(error);
   }
