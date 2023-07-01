@@ -16,7 +16,7 @@ export const printContacts = async () => {
 const printPersons = (array, container) => {
   array.forEach((item) => {
     console.log(item.Nombre);
-    console.log(item.info);
+    // console.log(item.info);
     const card = document.createElement("div");
     card.classList.add("block");
     card.innerHTML = `
