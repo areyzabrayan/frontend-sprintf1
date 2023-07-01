@@ -11,6 +11,7 @@ import {
   desktop,
   container,
 } from "../modules/dataDom";
+import { printImgOnline } from "../modules/userOnline";
 import { printName } from "../modules/editContianer";
 
 export const validateUser = async (event) => {
@@ -58,6 +59,7 @@ const validPwd = (users) => {
     seeDesktop();
     const welcome = seeLocal();
     popNotification2(`Welcome back ${welcome}`);
+    printImgOnline();
     printName();
   } else {
     popNotification("Incorrect password");

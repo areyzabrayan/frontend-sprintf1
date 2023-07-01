@@ -1,9 +1,8 @@
 import axios from "axios";
-import { URL_API } from "./dataUsers";
 
-const addToUsers = (newUser) => {
+const postData = (newUser, url) => {
   axios
-    .post(URL_API, newUser, {
+    .post(url, newUser, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -17,4 +16,4 @@ const addToUsers = (newUser) => {
     });
 };
 
-export default addToUsers;
+export default postData;
