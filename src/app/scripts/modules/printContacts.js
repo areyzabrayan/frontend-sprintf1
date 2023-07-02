@@ -1,5 +1,5 @@
 import getUsers from "../services/getUsers";
-import { chatlist, imgUser, username } from "./dataDom";
+import { chatlist, imgUser, username, rightContainer } from "./dataDom";
 import { URL_API, URL_MSG } from "../services/dataUsers";
 
 let selectedCard; // Declarar la variable selectedCard en el ámbito global
@@ -49,12 +49,26 @@ const printPersons = (array, container) => {
     // Agregar evento de clic al elemento 'card'
     card.addEventListener("click", () => {
       if (selectedCard) {
-        selectedCard.classList.remove("onclik"); // Eliminar la clase 'oscuro' del elemento anterior
+        console.log('hiceClick');
+         const card = document.querySelector(".righContainer");
+         card.classList.toggle("show2")
+          
+        selectedCard.classList.remove("onclik"); // Eliminar la clase 'oscuro' del elemento anterior   
       }
 
       card.classList.add("onclik"); // Agregar la clase 'oscuro' al elemento actual
+      
       selectedCard = card; // Actualizar el elemento seleccionado actualmente
 
+      //pintar contenedor de mensajes con la card seleccionada
+      document.addEventListener("click", (event) => {
+        if (event.target.classList.contains("chatlist")) {
+          console.log("hice click");
+          // const actions = document.querySelector(".show");
+          // console.log(actions);
+          // actions.classList.toggle("show2");
+        }
+      });
       // Obtener el ID del usuario de la card seleccionada
       const userId2 = card.dataset.userId;
       console.log("ID del usuario dos:", userId2);

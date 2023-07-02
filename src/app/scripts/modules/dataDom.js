@@ -49,3 +49,7 @@ export const changeName = document.querySelector(".changeName");
 // DOM chatBox
 export const imgUser = document.querySelector(".imgText .userimg img");
 export const username = document.querySelector(".imgText h4");
+
+// Container responsive
+
+export const rightContainer = document.querySelector(".righContainer");
