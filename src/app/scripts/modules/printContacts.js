@@ -1,6 +1,8 @@
 import getUsers from "../services/getUsers";
 import { chatlist, imgUser, inputMsg, username } from "./dataDom";
 import { URL_API, URL_MSG } from "../services/dataUsers";
+import postData from "../services/postData";
+import { printChats, renderMessages } from "./printChats";
 
 let selectedCard; // Declarar la variable selectedCard en el ámbito global
 export let idUserSelec = "";
@@ -93,7 +95,7 @@ export const userSesionV = () => {
   return storedArray.id;
 };
 
-const findMessagesByIds = async (idUser1, idUser2) => {
+export const findMessagesByIds = async (idUser1, idUser2) => {
   try {
     const response = await getUsers(URL_MSG);
     const messages = response;
@@ -108,6 +110,7 @@ const findMessagesByIds = async (idUser1, idUser2) => {
       console.log("conversacion iniciada");
       oldMessages = foundObj;
       idList = foundObj.id;
+      renderMessages(foundObj.messages, userSesionV());
     } else {
       console.log("Mensajes no encontrados");
       oldMessages = "";

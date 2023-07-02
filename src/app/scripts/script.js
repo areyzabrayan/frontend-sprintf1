@@ -4,6 +4,8 @@ import { toggleSignInUp } from "./modules/toggleSignInUp";
 import { bluebg, btnSend, form, form3, inputMsg } from "./modules/dataDom";
 import { local, printImgOnline } from "./modules/userOnline";
 import {
+  actualMessagesByIds,
+  findMessagesByIds,
   idList,
   idUserSelec,
   oldMessages,
@@ -97,15 +99,11 @@ document.addEventListener("click", (event) => {
 btnSend.addEventListener("click", (e) => {
   e.preventDefault();
 
-  const baseURL = "http://localhost:3000/users/";
-  const id = Number(idList);
-
-  const URL_ID = `${baseURL}${id}`;
-
   const inptmessage = inputMsg.value;
   const idUser1 = userSesionV();
   const idUser2 = idUserSelec;
   let messages = oldMessages || []; // Inicializar como un array vacío si oldMessages es falsy
+  findMessagesByIds(idUser1, idUser2);
 
   if (inptmessage.length > 0) {
     console.log(inptmessage);
@@ -114,27 +112,19 @@ btnSend.addEventListener("click", (e) => {
 
     console.log(newMessage);
     console.log(idList);
-    if (idList == 0) {
+    if (idList === 0) {
       const newConversation = {
         idUser1: idUser1,
         idUser2: Number(idUser2),
-        messages: [],
+        messages: [newMessage],
       };
       console.log(newConversation);
       postData(newConversation, URL_MSG);
     } else {
       console.log("id lista", idList);
-      addArrayElement(id, newMessage, URL_MSG);
+      addArrayElement(idList, newMessage, URL_MSG);
     }
 
-    // const newConversation = {
-    //   //id: id,
-    //   // idUser1: idUser1,
-    //   // idUser2: Number(idUser2),
-    //   messages: newMessage,
-    // };
-
-    // Limpiar el campo de entrada
     inputMsg.value = "";
   } else {
     return;
