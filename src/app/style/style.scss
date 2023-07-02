@@ -1,3 +1,5 @@
+@import "responsive";
+
 * {
   margin: 0;
   padding: 0;
@@ -536,7 +538,7 @@ body.active {
 .desktop .option-edit {
   position: absolute;
   top: 35px;
-  left: 160px;
+  left: 245px;
   padding: 20px;
   border-radius: 10px;
   z-index: 2;
@@ -624,9 +626,23 @@ body.active {
   background-color: white;
   color: grey;
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  
+  
+}
+.editContainer__name input{
+  border: none;
+  display: flex;
+  text-align: center;
+  font-size: large;
+  color: #111;
+  font-weight: 1000;
 }
 .editContainer__name-edit .box {
   background-color: white;
+  display: flex;
+  justify-content: space-between;
 }
 .editContainer__name-edit div {
   display: flex;
@@ -634,6 +650,10 @@ body.active {
 }
 .editContainer__name-edit input {
   border: none;
+  padding-left: 15px;
+}
+.editContainer__name-edit span{
+  padding-right: 10px;
 }
 .editContainer__name-edit input::placeholder {
   font-weight: 1000;
@@ -855,4 +875,19 @@ body.active {
 
 .borrar {
   display: none;
+}
+
+@media (max-width: 320px){
+  .desktop .option-edit {
+    left: 165px;
+    }
+    .desktop .righContainer {
+      display: none;
+    }
+    .desktop .editContainer {
+      width: 292px;
+    }
+    .editContainer__img {
+      margin-left: 70px;
+    }
 }

@@ -1,6 +1,5 @@
 import { URL_API } from "./dataUsers";
 import getUsers from "./getUsers";
-import { popNotification, popNotification2 } from "../modules/popNotification";
 import {
   celInput,
   nextInput,
@@ -13,6 +12,8 @@ import {
 } from "../modules/dataDom";
 import { printImgOnline } from "../modules/userOnline";
 import { printName } from "../modules/editContianer";
+import Swal from "sweetalert2";
+import { popNotification2 } from "../modules/popNotification";
 
 export const validateUser = async (event) => {
   event.preventDefault();
@@ -30,7 +31,7 @@ export const validateUser = async (event) => {
     if (foundCel) {
       //console.log("User information:", foundCel);
       removHiddenPwd();
-      console.log("Enter password");
+      // alert("Enter password");
       popNotification2("Enter password");
       form2.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -39,7 +40,14 @@ export const validateUser = async (event) => {
       // Realizar las acciones necesarias con la información del usuario encontrado
     } else {
       //console.log("Number not found in the array:", enteredCel);
-      popNotification("Enter a valid username");
+      // alert("Enter a valid password");
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Usuario Incorrepto!',
+        footer: 'Intenta de nuevo'
+      })
+      form.reset();
       addHiddenPwd();
     }
   } catch (error) {
@@ -59,10 +67,19 @@ const validPwd = (users) => {
     seeDesktop();
     const welcome = seeLocal();
     popNotification2(`Welcome back ${welcome}`);
+    Swal.fire({
+      icon: 'success',
+      title: 'Muy bien',
+      text: 'bienvenido!',
+    })
     printImgOnline();
     printName();
   } else {
-    popNotification("Incorrect password");
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Contraseña Incorrepta!',
+    })
     form.reset();
     form2.reset();
     addHiddenPwd();
