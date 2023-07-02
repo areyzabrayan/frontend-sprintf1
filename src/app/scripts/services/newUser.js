@@ -3,6 +3,7 @@ import { popNotification, popNotification2 } from "../modules/popNotification";
 import { form3, nameR, celphoneR, passwordR, urlR } from "../modules/dataDom";
 import { URL_API } from "./dataUsers";
 import postData from "./postData";
+import Swal from "sweetalert2";
 
 const newUser = async (event) => {
   event.preventDefault();
@@ -15,7 +16,12 @@ const newUser = async (event) => {
 
     const foundNumber = users.find((user) => user.Celphone == newCelphoneR);
     if (foundNumber) {
-      popNotification("Número existente");
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Numero Existente!',
+        footer: 'Intenta de nuevo'
+      })
       return;
     }
 
