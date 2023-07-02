@@ -1,8 +1,11 @@
 import getUsers from "../services/getUsers";
-import { chatlist, imgUser, username } from "./dataDom";
+import { chatlist, imgUser, inputMsg, username } from "./dataDom";
 import { URL_API, URL_MSG } from "../services/dataUsers";
 
 let selectedCard; // Declarar la variable selectedCard en el ámbito global
+export let idUserSelec = "";
+export let oldMessages = "";
+export let idList = "";
 
 export const printContacts = async () => {
   try {
@@ -54,6 +57,7 @@ const printPersons = (array, container) => {
 
       card.classList.add("onclik"); // Agregar la clase 'oscuro' al elemento actual
       selectedCard = card; // Actualizar el elemento seleccionado actualmente
+      inputMsg.value = "";
 
       // Obtener el ID del usuario de la card seleccionada
       const userId2 = card.dataset.userId;
@@ -68,6 +72,7 @@ const printPersons = (array, container) => {
       const userSesion = userSesionV();
       console.log(userSesion);
       findMessagesByIds(userSesion, userId2);
+      idUserSelec = userId2;
 
       // Otras operaciones con el elemento 'card' capturado
       // ...
@@ -82,7 +87,7 @@ const updateUserInfo = (imageUrl, nombre) => {
   username.textContent = nombre;
 };
 
-const userSesionV = () => {
+export const userSesionV = () => {
   const storedArrayString = localStorage.getItem("saveLocalUser");
   const storedArray = JSON.parse(storedArrayString);
   return storedArray.id;
@@ -93,14 +98,20 @@ const findMessagesByIds = async (idUser1, idUser2) => {
     const response = await getUsers(URL_MSG);
     const messages = response;
     const foundObj = messages.find(
-      (obj) => obj.idUser1 == idUser1 && obj.idUser2 == idUser2
+      (obj) =>
+        (obj.idUser1 == idUser1 && obj.idUser2 == idUser2) ||
+        (obj.idUser1 == idUser2 && obj.idUser2 == idUser1)
     );
 
     if (foundObj) {
       console.log(foundObj.messages);
       console.log("conversacion iniciada");
+      oldMessages = foundObj;
+      idList = foundObj.id;
     } else {
       console.log("Mensajes no encontrados");
+      oldMessages = "";
+      idList = 0;
     }
   } catch (error) {
     console.log(error);
