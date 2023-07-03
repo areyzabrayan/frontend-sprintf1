@@ -1,4 +1,5 @@
 import { URL_MSG } from "../services/dataUsers";
+import { chatBox } from "./dataDom";
 
 export const printChats = async () => {
   try {
@@ -12,26 +13,36 @@ export const printChats = async () => {
 };
 
 export const renderMessages = (messages, userSesion) => {
-  const chatBox = document.querySelector(".chatBox");
+  const chatContainer = chatBox;
 
   messages.forEach((message) => {
     const { id, sendBy, message: text, date } = message;
-    const messageElement = document.createElement("div");
-    const messageContent = document.createElement("p");
-    const timestamp = document.createElement("span");
 
-    messageElement.classList.add("messagechat");
-    messageContent.textContent = text;
-    timestamp.textContent = date;
+    // Verificar si el mensaje ya existe en el chatBox
+    const existingMessageElement = document.getElementById(id);
 
-    if (sendBy === userSesion) {
-      messageElement.classList.add("my_message");
-    } else {
-      messageElement.classList.add("frnd_message");
+    if (!existingMessageElement) {
+      const messageElement = document.createElement("div");
+      const messageContent = document.createElement("p");
+      const timestamp = document.createElement("span");
+
+      messageElement.classList.add("messagechat");
+      messageContent.textContent = text;
+      timestamp.textContent = date;
+
+      if (sendBy === userSesion) {
+        messageElement.classList.add("my_message");
+      } else {
+        messageElement.classList.add("frnd_message");
+      }
+
+      messageElement.setAttribute("id", id); // Agregar el ID al elemento del mensaje
+
+      messageContent.appendChild(timestamp);
+      messageElement.appendChild(messageContent);
+
+      // Agregar el contenido del mensaje al chatBox utilizando innerHTML
+      chatContainer.innerHTML += messageElement.outerHTML;
     }
-
-    messageContent.appendChild(timestamp);
-    messageElement.appendChild(messageContent);
-    chatBox.appendChild(messageElement);
   });
 };

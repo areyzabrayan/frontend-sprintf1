@@ -1,6 +1,11 @@
 import { DateTime } from "luxon";
-import { userSesionV } from "../modules/printContacts";
+import {
+  findMessagesByIds,
+  idUserSelec,
+  userSesionV,
+} from "../modules/printContacts";
 import axios from "axios";
+import { renderMessages } from "../modules/printChats";
 
 export const newMessages = (message, listMessages) => {
   //Calcular id
@@ -34,8 +39,11 @@ const addArrayElement = async (id, newArrayElement, url) => {
 
     // Realizar la solicitud PUT o PATCH para actualizar el objeto en el servidor
     await axios.put(`${url}/${id}`, existingObject);
+    const response2 = await axios.get(`${url}/${id}`);
+    const existingObject2 = response2.data;
+    renderMessages(existingObject2.messages, userSesionV());
 
-    console.log("Elemento agregado correctamente");
+    console.log("Elemento agregado correctamente", existingObject2.messages);
   } catch (error) {
     console.error("Error al agregar el elemento:", error);
   }

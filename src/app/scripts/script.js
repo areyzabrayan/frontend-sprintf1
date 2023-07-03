@@ -103,7 +103,6 @@ btnSend.addEventListener("click", (e) => {
   const idUser1 = userSesionV();
   const idUser2 = idUserSelec;
   let messages = oldMessages || []; // Inicializar como un array vacío si oldMessages es falsy
-  findMessagesByIds(idUser1, idUser2);
 
   if (inptmessage.length > 0) {
     console.log(inptmessage);

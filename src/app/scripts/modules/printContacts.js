@@ -1,5 +1,5 @@
 import getUsers from "../services/getUsers";
-import { chatlist, imgUser, inputMsg, username } from "./dataDom";
+import { chatBox, chatlist, imgUser, inputMsg, username } from "./dataDom";
 import { URL_API, URL_MSG } from "../services/dataUsers";
 import postData from "../services/postData";
 import { printChats, renderMessages } from "./printChats";
@@ -110,8 +110,12 @@ export const findMessagesByIds = async (idUser1, idUser2) => {
       console.log("conversacion iniciada");
       oldMessages = foundObj;
       idList = foundObj.id;
+      const chatContainer = chatBox;
+      chatContainer.innerHTML = "";
       renderMessages(foundObj.messages, userSesionV());
     } else {
+      const chatContainer = chatBox;
+      chatContainer.innerHTML = "";
       console.log("Mensajes no encontrados");
       oldMessages = "";
       idList = 0;
