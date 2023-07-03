@@ -73,6 +73,7 @@ document.addEventListener("click", (event) => {
     actions.classList.toggle("show2");
   }
 });
+
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("second")) {
     console.log("hice click");

@@ -52,4 +52,4 @@ export const username = document.querySelector(".imgText h4");
 
 // Container responsive
 
-export const rightContainer = document.querySelector(".righContainer");
+export const rightContainer = document.querySelector(".righContainer cambio");
