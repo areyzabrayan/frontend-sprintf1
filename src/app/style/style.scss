@@ -391,9 +391,11 @@ body.active {
   text-overflow: ellipsis;
 }
 
-.message b {
-  background-color: #06d755;
-  color: #fff;
+.messagechat b {
+  position: absolute;
+  top: 10px;
+  background-color: #06d79fc9;
+  font-weight: bold;
   min-width: 20px;
   height: 20px;
   border-radius: 50px;
@@ -401,8 +403,40 @@ body.active {
   justify-content: center;
   align-items: center;
   font-size: 0.75em;
+  display: none;
+  cursor: pointer;
 }
 
+.messagechat:hover b {
+  display: flex;
+  z-index: 3;
+}
+//////////////////////
+.messagechat b:hover + .menuContainer {
+  display: block;
+}
+
+.menuContainer {
+  position: absolute;
+  bottom: 40px;
+  background-color: #ffffff;
+  padding: 5px;
+  display: none;
+  margin-bottom: 15px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+}
+
+.menuOptions {
+  display: flex;
+  flex-direction: column;
+}
+
+.menuOptions span {
+  padding: 5px;
+}
+/////////////
 .imgText {
   position: relative;
   display: flex;

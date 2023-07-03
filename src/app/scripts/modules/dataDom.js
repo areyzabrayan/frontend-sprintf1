@@ -35,20 +35,20 @@ export let editContainerVisual = document.querySelector(
 );
 
 // Input nombre de usuario
-
 export const first = document.querySelector(".first");
 export const editContainer__name = document.querySelector(
   ".editContainer__name"
 );
 export const change = document.querySelector(".change");
-
 export const nameEdituser = document.querySelector(".nameEdituser");
-
 export const changeName = document.querySelector(".changeName");
 
 // DOM chatBox
 export const imgUser = document.querySelector(".imgText .userimg img");
 export const username = document.querySelector(".imgText h4");
+export const inputMsg = document.querySelector(".inputMsg");
+export const btnSend = document.querySelector(".btnSend");
+export const chatBox = document.querySelector(".chatBox");
 
 // Container responsive
 
