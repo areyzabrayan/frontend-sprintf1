@@ -15,6 +15,7 @@ let selectedCard; // Declarar la variable selectedCard en el ámbito global
 export let idUserSelec = "";
 export let oldMessages = "";
 export let idList = "";
+export let mensajesActuales = "";
 
 export const printContacts = async () => {
   try {
@@ -126,13 +127,14 @@ export const findMessagesByIds = async (idUser1, idUser2) => {
     );
 
     if (foundObj) {
-      console.log(foundObj.messages);
-      console.log("conversacion iniciada");
+      // console.log(foundObj.messages);
+      // console.log("conversacion iniciada");
       oldMessages = foundObj;
       idList = foundObj.id;
       const chatContainer = chatBox;
       chatContainer.innerHTML = "";
       renderMessages(foundObj.messages, userSesionV());
+      mensajesActuales = foundObj.messages;
     } else {
       const chatContainer = chatBox;
       chatContainer.innerHTML = "";
