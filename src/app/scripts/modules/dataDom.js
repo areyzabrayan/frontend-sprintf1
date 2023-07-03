@@ -35,15 +35,12 @@ export let editContainerVisual = document.querySelector(
 );
 
 // Input nombre de usuario
-
 export const first = document.querySelector(".first");
 export const editContainer__name = document.querySelector(
   ".editContainer__name"
 );
 export const change = document.querySelector(".change");
-
 export const nameEdituser = document.querySelector(".nameEdituser");
-
 export const changeName = document.querySelector(".changeName");
 
 // DOM chatBox

@@ -42,8 +42,7 @@ const printPersons = (array, container) => {
         <div class="message">
           <p>
             ${item.info}
-          </p>
-         <b></b>
+          </p>         
         </div>
       </div>    
     `;
