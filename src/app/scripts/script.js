@@ -18,6 +18,7 @@ import addArrayElement, { newMessages } from "./services/newMessages.js";
 import getUsers from "./services/getUsers";
 import { URL_MSG } from "./services/dataUsers";
 import postData from "./services/postData";
+import { renderMessages } from "./modules/printChats";
 
 seeSegnin();
 

@@ -1,3 +1,4 @@
+import { DateTime } from "luxon";
 import { URL_MSG } from "../services/dataUsers";
 import { chatBox } from "./dataDom";
 
@@ -28,7 +29,7 @@ export const renderMessages = (messages, userSesion) => {
 
       messageElement.classList.add("messagechat");
       messageContent.textContent = text;
-      timestamp.textContent = date;
+      timestamp.textContent = DateTime.fromISO(date).toRelative(); // Formatear la fecha de manera relativa utilizando luxon
 
       if (sendBy === userSesion) {
         messageElement.classList.add("my_message");

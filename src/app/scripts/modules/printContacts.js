@@ -43,7 +43,7 @@ const printPersons = (array, container) => {
           <p>
             ${item.info}
           </p>
-          <b>1</b>
+         <b></b>
         </div>
       </div>    
     `;

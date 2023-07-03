@@ -20,7 +20,7 @@ export const newMessages = (message, listMessages) => {
   const newMessage = {
     id: generateUniqueId(),
     sendBy: userSesion,
-    date: "date",
+    date: DateTime.now(),
     message: message,
     flag: false,
   };
