@@ -1,5 +1,12 @@
 import getUsers from "../services/getUsers";
-import { chatBox, chatlist, imgUser, inputMsg, username } from "./dataDom";
+import {
+  chatlist,
+  imgUser,
+  username,
+  rightContainer,
+  inputMsg,
+  chatBox,
+} from "./dataDom";
 import { URL_API, URL_MSG } from "../services/dataUsers";
 import postData from "../services/postData";
 import { printChats, renderMessages } from "./printChats";
@@ -23,7 +30,7 @@ export const printContacts = async () => {
 const printPersons = (array, container) => {
   array.forEach((item) => {
     console.log(item.Nombre);
-    console.log(item.info);
+    // console.log(item.info);
     const card = document.createElement("div");
     card.classList.add("block");
     card.innerHTML = `
@@ -53,13 +60,27 @@ const printPersons = (array, container) => {
     // Agregar evento de clic al elemento 'card'
     card.addEventListener("click", () => {
       if (selectedCard) {
+        console.log("hiceClick");
+        const card = document.querySelector(".righContainer");
+        card.classList.toggle("show2");
+
         selectedCard.classList.remove("onclik"); // Eliminar la clase 'oscuro' del elemento anterior
       }
 
       card.classList.add("onclik"); // Agregar la clase 'oscuro' al elemento actual
+
       selectedCard = card; // Actualizar el elemento seleccionado actualmente
       inputMsg.value = "";
 
+      //pintar contenedor de mensajes con la card seleccionada
+      document.addEventListener("click", (event) => {
+        if (event.target.classList.contains("chatlist")) {
+          console.log("hice click");
+          // const actions = document.querySelector(".show");
+          // console.log(actions);
+          // actions.classList.toggle("show2");
+        }
+      });
       // Obtener el ID del usuario de la card seleccionada
       const userId2 = card.dataset.userId;
       console.log("ID del usuario dos:", userId2);

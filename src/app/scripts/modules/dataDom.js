@@ -49,3 +49,7 @@ export const username = document.querySelector(".imgText h4");
 export const inputMsg = document.querySelector(".inputMsg");
 export const btnSend = document.querySelector(".btnSend");
 export const chatBox = document.querySelector(".chatBox");
+
+// Container responsive
+
+export const rightContainer = document.querySelector(".righContainer");
