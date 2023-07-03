@@ -17,11 +17,11 @@ const newUser = async (event) => {
     const foundNumber = users.find((user) => user.Celphone == newCelphoneR);
     if (foundNumber) {
       Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Numero Existente!',
-        footer: 'Intenta de nuevo'
-      })
+        icon: "error",
+        title: "Oops...",
+        text: "Numero Existente!",
+        footer: "Intenta de nuevo",
+      });
       return;
     }
 
@@ -38,6 +38,11 @@ const newUser = async (event) => {
 
     form3.reset();
     postData(newUser, URL_API);
+    Swal.fire({
+      icon: "success",
+      title: "Hecho",
+      text: "Nuevo usuario agregado!",
+    });
   } catch (error) {
     console.log(error);
   }

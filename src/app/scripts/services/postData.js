@@ -10,11 +10,11 @@ const postData = (newUser, url) => {
     })
     .then((response) => {
       console.log(response);
-      Swal.fire({
-        icon: 'success',
-        title: 'Hecho',
-        text: 'Nuevo usuario agregado!',
-      })
+      // Swal.fire({
+      //   icon: 'success',
+      //   title: 'Hecho',
+      //   text: 'Nuevo usuario agregado!',
+      // })
       //popNotification2("Ususario registrado", response.data);
     })
     .catch((error) => {
