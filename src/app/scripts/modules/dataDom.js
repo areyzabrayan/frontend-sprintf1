@@ -52,4 +52,4 @@ export const chatBox = document.querySelector(".chatBox");
 
 // Container responsive
 
-export const rightContainer = document.querySelector(".righContainer");
+export const rightContainer = document.querySelector(".righContainer cambio");

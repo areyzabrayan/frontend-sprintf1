@@ -61,27 +61,20 @@ const printPersons = (array, container) => {
     // Agregar evento de clic al elemento 'card'
     card.addEventListener("click", () => {
       if (selectedCard) {
-        console.log("hiceClick");
-        const card = document.querySelector(".righContainer");
-        card.classList.toggle("show2");
-
-        selectedCard.classList.remove("onclik"); // Eliminar la clase 'oscuro' del elemento anterior
+        console.log('hiceClick');
+        //  const card = document.querySelector(".righContainer");
+        //  card.classList.toggle("show2")
+    
+        selectedCard.classList.remove("onclik"); // Eliminar la clase 'oscuro' del elemento anterior   
       }
 
       card.classList.add("onclik"); // Agregar la clase 'oscuro' al elemento actual
-
+      card.classList.remove("cambio")
       selectedCard = card; // Actualizar el elemento seleccionado actualmente
       inputMsg.value = "";
 
       //pintar contenedor de mensajes con la card seleccionada
-      document.addEventListener("click", (event) => {
-        if (event.target.classList.contains("chatlist")) {
-          console.log("hice click");
-          // const actions = document.querySelector(".show");
-          // console.log(actions);
-          // actions.classList.toggle("show2");
-        }
-      });
+      
       // Obtener el ID del usuario de la card seleccionada
       const userId2 = card.dataset.userId;
       console.log("ID del usuario dos:", userId2);
