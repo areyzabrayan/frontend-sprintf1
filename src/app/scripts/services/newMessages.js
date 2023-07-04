@@ -7,13 +7,9 @@ import {
 import axios from "axios";
 import { renderMessages } from "../modules/printChats";
 
-export const newMessages = (message, listMessages) => {
+export const newMessages = (message) => {
   //Calcular id
-  const id =
-    listMessages && listMessages.messages
-      ? listMessages.messages.length + 1
-      : 1;
-  console.log(listMessages);
+
   const userSesion = userSesionV();
   //const date = DateTime.now().toLocaleString(DateTime.DATE_SHORT);
 

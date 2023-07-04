@@ -109,7 +109,7 @@ btnSend.addEventListener("click", (e) => {
   if (inptmessage.length > 0) {
     console.log(inptmessage);
     console.log(messages.messages);
-    const newMessage = newMessages(inptmessage, messages);
+    const newMessage = newMessages(inptmessage);
 
     console.log(newMessage);
     console.log(idList);
