@@ -20,6 +20,7 @@ import getUsers from "./services/getUsers";
 import { URL_MSG } from "./services/dataUsers";
 import postData from "./services/postData";
 import { renderMessages } from "./modules/printChats";
+import { printmessageFinder } from "./modules/printMessage";
 
 seeSegnin();
 
@@ -148,7 +149,9 @@ btnSend.addEventListener("click", (e) => {
 //------------------------------------------------------------------------// inputpalabra.addEventListener('change', printMessageFinder )
 
 
-inputchats.addEventListener('change', printChatsFinder)
+inputchats.addEventListener('change', printChatsFinder);
+
+inputpalabra.addEventListener('change', printmessageFinder);
 
 
 
