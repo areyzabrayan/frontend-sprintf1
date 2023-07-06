@@ -47,6 +47,15 @@ const addArrayElement = async (id, newArrayElement, url) => {
 
 export default addArrayElement;
 
+export const findMessages = async(keyword) =>{
+  try {
+    const response = await axios.get(`${url}?messages_like=${keyword}`);
+    const menssageFilter = response.data
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export const generateUniqueId = () => {
   const timestamp = Date.now().toString(36); // Obtener una representación en base 36 del timestamp actual
   const randomChars = Math.random().toString(36).substring(2, 5); // Generar una cadena aleatoria de 3 caracteres en base 36

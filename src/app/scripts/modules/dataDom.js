@@ -53,3 +53,15 @@ export const chatBox = document.querySelector(".chatBox");
 // Container responsive
 
 export const rightContainer = document.querySelector(".righContainer cambio");
+export const backChat = document.querySelector(".backChat");
+
+
+// container filter
+
+export const inputpalabra = document.querySelector(".searchPalabra");
+export const lupa = document.querySelector(".lupa");
+export const filter = document.querySelector(".searchContainer__showFilter");
+
+
+//chats filter
+export const inputchats = document.querySelector(".chats_Search");
