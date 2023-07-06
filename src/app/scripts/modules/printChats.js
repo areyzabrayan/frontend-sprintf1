@@ -1,7 +1,6 @@
 import { DateTime } from "luxon";
 import { URL_MSG } from "../services/dataUsers";
 import { chatBox } from "./dataDom";
-import addArrayElement from "../services/newMessages";
 import { idList, userSesionV } from "./printContacts";
 import axios from "axios";
 import { deleteMessage } from "../services/deleteMessage";
@@ -96,23 +95,20 @@ export const renderMessages = (messages, userSesion) => {
       btnMsg.addEventListener("click", () => {
         // Acción que deseas realizar al hacer clic en el elemento <b>
         menuContainer.style.display = "block";
-        console.log("Hice clic en el mensaje con ID:", id);
       });
 
       messageElement.addEventListener("mouseleave", () => {
-        // Acción que deseas realizar cuando el cursor se aleja del mensaje
         menuContainer.style.display = "none";
       });
 
       editOption.addEventListener("click", () => {
-        // Acción que deseas realizar al hacer clic en el elemento "Editar"
         messageContent.style.display = "none";
         editForm.style.display = "block";
       });
 
       editForm.addEventListener("submit", (event) => {
         event.preventDefault();
-        const editedText = editInput.value; // Obtener el nuevo texto del campo de edición
+        const editedText = editInput.value;
         messageContent.style.display = "block";
         editForm.style.display = "none";
       });

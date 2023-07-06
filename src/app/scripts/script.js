@@ -2,13 +2,17 @@ import newUser from "./services/newUser";
 import { validateUser, seeSegnin } from "./services/validateUser";
 import { toggleSignInUp } from "./modules/toggleSignInUp";
 import {
-  backChat,
   bluebg,
   btnSend,
+  editFoto,
+  editFoto2,
   form,
   form3,
   inputMsg,
   inputchats,
+  inputpalabra,
+  nameEditUser,
+  nameEditUser2,
 } from "./modules/dataDom";
 import {
   idList,
@@ -20,8 +24,11 @@ import {
 } from "./modules/printContacts";
 import "../style/style.scss";
 import addArrayElement, { newMessages } from "./services/newMessages.js";
-import { URL_MSG } from "./services/dataUsers";
+import { URL_API, URL_MSG } from "./services/dataUsers";
 import postData from "./services/postData";
+import { updateUserData } from "./modules/editContianer";
+import { renderMessages } from "./modules/printChats";
+import { printmessageFinder } from "./modules/printMessage";
 
 seeSegnin();
 
@@ -35,10 +42,6 @@ form.addEventListener("submit", (event) => {
 //----VALIDAR REGISTRO USUARIO
 form3.addEventListener("submit", (event) => {
   newUser(event);
-});
-
-document.addEventListener("DOMContentLoaded", async () => {
-  printContacts();
 });
 
 document.addEventListener("click", (event) => {
@@ -92,6 +95,15 @@ document.addEventListener("click", (event) => {
   }
 });
 
+nameEditUser2.addEventListener("click", () => {
+  const newName = nameEditUser.value;
+  updateUserData(userSesionV(), newName, "Nombre", URL_API);
+});
+
+editFoto2.addEventListener("click", () => {
+  const newImg = editFoto.value;
+  updateUserData(userSesionV(), newImg, "Url_image", URL_API);
+});
 //------------------------------------------------------------------------------
 //evento click al enviar un mensaje
 //------------------------------------------------------------------------------
@@ -101,7 +113,7 @@ btnSend.addEventListener("click", (e) => {
   const inptmessage = inputMsg.value;
   const idUser1 = userSesionV();
   const idUser2 = idUserSelec;
-  let messages = oldMessages || []; // Inicializar como un array vacío si oldMessages es falsy
+  let messages = oldMessages || [];
 
   if (inptmessage.length > 0) {
     const newMessage = newMessages(inptmessage);
@@ -124,6 +136,13 @@ btnSend.addEventListener("click", (e) => {
 
 //------------------------------------------------------------------------------
 //evento filter al buscar en por nombre
-//-----------------------------------------------------------------------
+//------------------------------------------------------------------------// inputpalabra.addEventListener('change', printMessageFinder )
 
-inputchats.addEventListener("change", printChatsFinder);
+
+inputchats.addEventListener('change', printChatsFinder);
+
+inputpalabra.addEventListener('change', printmessageFinder);
+
+
+
+

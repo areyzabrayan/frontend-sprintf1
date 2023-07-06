@@ -198,14 +198,6 @@ body.active {
   font-weight: 600;
 }
 
-.notification2.show {
-  opacity: 1;
-}
-
-.notification2.hide {
-  opacity: 0;
-}
-
 /* ----------------------------- */
 /* pagina de principal whatsapp  */
 /* ----------------------------- */
@@ -312,6 +304,16 @@ body.active {
   left: 30px;
   top: 14px;
   font-size: 1.2em;
+}
+
+.editContainer__name ion-icon {
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.editContainer__name-edit ion-icon {
+  font-size: 1.2em;
+  cursor: pointer;
 }
 
 .chatlist {
@@ -593,7 +595,8 @@ body.active {
   padding: 20px;
   border-radius: 10px;
   z-index: 2;
-  background-color: #b7dbec;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   flex-direction: column;
 }
@@ -602,20 +605,20 @@ body.active {
 }
 .option-edit .first {
   color: black;
-  font-weight: 1000;
+  padding: 6px;
+  font-weight: bold;
   cursor: pointer;
 }
 .option-edit .first:hover {
-  text-decoration: underline;
-  transform: scale(1.2);
+  border-left: 3px solid rgb(215, 215, 215);
 }
 .option-edit .second:hover {
-  text-decoration: underline;
-  transform: scale(1.2);
+  border-left: 3px solid rgb(215, 215, 215);
 }
 .option-edit .second {
+  padding: 6px;
   color: black;
-  font-weight: 1000;
+  font-weight: bold;
   cursor: pointer;
 }
 .active {
@@ -715,13 +718,12 @@ body.active {
   background: #e5ddd5;
 }
 .desktop .righContainer .cambio {
-  background: #e5ddd5; 
- 
+  background: #e5ddd5;
 }
-.desktop .cambio{
+.desktop .cambio {
   display: none;
 }
-.desktop .righContainer .backChat{
+.desktop .righContainer .backChat {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -875,7 +877,7 @@ body.active {
   border: none;
   width: 290px;
 }
-.searchContainer__filter .lupa{
+.searchContainer__filter .lupa {
   cursor: pointer;
 }
 .searchContainer__filter input::placeholder {
@@ -954,11 +956,11 @@ body.active {
   .editContainer__img {
     margin-left: 70px;
   }
-@media (max-width: 400px){
-  .desktop .option-edit {
-    left: 235px;
+  @media (max-width: 400px) {
+    .desktop .option-edit {
+      left: 235px;
     }
-    .desktop .righContainer  {
+    .desktop .righContainer {
       position: absolute;
       top: 0px;
       left: 0px;
@@ -966,7 +968,6 @@ body.active {
       height: 479px;
       flex: 70%;
       background: #e5ddd5;
-       
     }
     .desktop .editContainer {
       width: 360px;
@@ -974,7 +975,7 @@ body.active {
     .editContainer__img {
       margin-left: 100px;
     }
-    .desktop .righContainer .backChat{
+    .desktop .righContainer .backChat {
       position: absolute;
       top: 10px;
       left: 10px;
@@ -989,5 +990,5 @@ body.active {
       align-items: center;
       visibility: hidden;
     }
-}
+  }
 }

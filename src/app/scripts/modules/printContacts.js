@@ -21,14 +21,19 @@ export const printContacts = async () => {
     const response = await getUsers(URL_API);
     const users = response;
     let card = chatlist;
-    printPersons(users, card);
+    printPersons(users, card, userSesionV());
   } catch (error) {
     console.error("Error fetching user data:", error);
   }
 };
 
-export const printPersons = (array, container) => {
+export const printPersons = (array, container, currentUserId) => {
   array.forEach((item) => {
+    // Verificar si el ID del usuario coincide con el ID del usuario actual
+    if (item.id === currentUserId) {
+      return; // Omitir la creación de la tarjeta
+    }
+
     const card = document.createElement("div");
     card.classList.add("block");
     card.innerHTML = `

@@ -40,8 +40,10 @@ export default addArrayElement;
 
 export const findMessages = async (keyword) => {
   try {
-    const response = await axios.get(`${url}?messages_like=${keyword}`);
-    const menssageFilter = response.data;
+    console.log('estoy acá');
+    const response = await axios.get(`${url}?Mensajes_like=${keyword}`);
+    const menssageFilter = response.data
+    return menssageFilter
   } catch (error) {
     console.log(error);
   }
@@ -53,3 +55,4 @@ export const generateUniqueId = () => {
   const uniqueId = `${timestamp}${randomChars}`; // Concatenar el timestamp y la cadena aleatoria
   return uniqueId;
 };
+
