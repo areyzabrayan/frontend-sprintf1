@@ -10,6 +10,7 @@ import {
   form3,
   inputMsg,
   inputchats,
+  inputpalabra,
   nameEditUser,
   nameEditUser2,
 } from "./modules/dataDom";
@@ -26,6 +27,8 @@ import addArrayElement, { newMessages } from "./services/newMessages.js";
 import { URL_API, URL_MSG } from "./services/dataUsers";
 import postData from "./services/postData";
 import { updateUserData } from "./modules/editContianer";
+import { renderMessages } from "./modules/printChats";
+import { printmessageFinder } from "./modules/printMessage";
 
 seeSegnin();
 
@@ -133,6 +136,13 @@ btnSend.addEventListener("click", (e) => {
 
 //------------------------------------------------------------------------------
 //evento filter al buscar en por nombre
-//-----------------------------------------------------------------------
+//------------------------------------------------------------------------// inputpalabra.addEventListener('change', printMessageFinder )
 
-inputchats.addEventListener("change", printChatsFinder);
+
+inputchats.addEventListener('change', printChatsFinder);
+
+inputpalabra.addEventListener('change', printmessageFinder);
+
+
+
+
