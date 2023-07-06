@@ -61,8 +61,6 @@
             <input type="url" placeholder="Url image" id="urlR" />
             <input type="submit" id="Registrarse" value="Registrarse" />
           </form>
-          <p class="notification"></p>
-          <p class="notification2"></p>
         </div>
       </div>
     </div>
@@ -86,7 +84,7 @@
         <!--search-->
         <div class="search__chat">
           <div>
-            <input type="text" placeholder="Buscar o iniciar un nuevo chat." />
+            <input class="chats_Search" type="text" placeholder="Buscar o iniciar un nuevo chat." />
             <ion-icon name="search-outline"></ion-icon>
           </div>
         </div>
@@ -125,7 +123,7 @@
         </div>
       </div>
 
-      <div class="righContainer">
+      <div class="righContainer cambio">
         <div class="header">
           <div class="imgText">
             <figure class="userimg">
@@ -137,6 +135,9 @@
             </figure>
             <h4>Albert Einstein <br /><span>EN LÍNEA</span></h4>
           </div>
+          <span class="material-symbols-outlined backChat">
+            arrow_back
+            </span>
           <ul class="nav__icon">
             <span class="material-symbols-outlined search-outline">
               search
@@ -145,93 +146,22 @@
         </div>
 
         <!--message box-->
-        <div class="chatBox">
-          <div class="messagechat my_message">
+       <div class="chatBox">
+          <!-- <div class="messagechat my_message">
             <p>Hola<br /><span>11:55</span></p>
           </div>
           <div class="messagechat frnd_message">
             <p>Hola ¿Cómo estás?<br /><span>12:03</span></p>
-          </div>
-          <div class="messagechat my_message">
-            <p>Muy bien gracias y vos<br /><span>12:20</span></p>
-          </div>
-          <div class="messagechat frnd_message">
-            <p>
-              Bien bien, no se te olvide enviarme la direccion de la
-              recidencia<br /><span>12:03</span>
-            </p>
-          </div>
-          <div class="messagechat my_message">
-            <p>Noo, descuida ahora mismo te la envio<br /><span>12:25</span></p>
-          </div>
-          <div class="messagechat frnd_message">
-            <p>Vale muchas gracias pues<br /><span>12:33</span></p>
-          </div>
-          <div class="messagechat my_message">
-            <p>Hola<br /><span>11:55</span></p>
-          </div>
-          <div class="messagechat frnd_message">
-            <p>Hola ¿Cómo estás?<br /><span>12:03</span></p>
-          </div>
-          <div class="messagechat my_message">
-            <p>Muy bien gracias y vos<br /><span>12:20</span></p>
-          </div>
-          <div class="messagechat frnd_message">
-            <p>
-              Bien bien, no se te olvide enviarme la direccion de la
-              recidencia<br /><span>12:03</span>
-            </p>
-          </div>
-          <div class="messagechat my_message">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem,
-              voluptatem excepturi quos sint at vitae laboriosam aspernatur
-              deserunt aut? Culpa est ex sunt? Natus asperiores facilis itaque
-              hic, perferendis perspiciatis.<br /><span>12:25</span>
-            </p>
-          </div>
-          <div class="messagechat frnd_message">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
-              aliquid perferendis exercitationem molestias consequatur autem
-              magnam reprehenderit, voluptatum, velit consequuntur numquam at
-              voluptates, porro sed eveniet ea ut aperiam impedit.<br /><span
-                >12:33</span
-              >
-            </p>
-          </div>
-          <div class="messagechat frnd_message">
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat
-              aut quas dolorum! Nam magni velit mollitia, quos ullam similique,
-              sequi repellendus nobis incidunt itaque ducimus voluptatem
-              pariatur aperiam expedita unde.<br /><span>12:03</span>
-            </p>
-          </div>
-          <div class="messagechat my_message">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas enim
-              atque nobis facilis quisquam eos, perferendis sequi doloribus nemo
-              cumque excepturi tempora. Velit, officiis ut! Veritatis pariatur
-              aspernatur magnam fugiat?<br /><span>12:25</span>
-            </p>
-          </div>
-          <div class="messagechat frnd_message">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-              nulla reiciendis optio molestias labore unde velit blanditiis
-              tempora quis! Odio autem ut ratione at quasi. Blanditiis
-              voluptatibus optio veritatis tenetur.<br /><span>12:33</span>
-            </p>
-          </div>
+          </div>   -->
+
         </div>
         <!-- chat box input-->
-        <div class="chatbox__input">
+        <form class="chatbox__input">
           <ion-icon name="happy-outline"></ion-icon>
           <ion-icon name="attach-outline"></ion-icon>
-          <input type="text" placeholder="Escribe un mensaje" />
-          <ion-icon name="send-outline"></ion-icon>
-        </div>
+          <input class="inputMsg" type="text" placeholder="Escribe un mensaje" />
+          <ion-icon class="btnSend" name="send-outline"></ion-icon>
+        </form>
         <div class="">
         <div class="searchContainer show">
           <div class="searchContainer__nav">
@@ -244,15 +174,15 @@
             <span class="material-symbols-outlined lupa">
               search
               </span>
-              <input type="text" placeholder="Palabra o frase">
-              <span class="material-symbols-outlined">
+              <input class="searchPalabra" type="text" placeholder="Palabra o frase">
+              <span class="material-symbols-outlined xfilter">
                 close
                 </span>
           </div>
           <div class="searchContainer__showFilter">
             <h5>mensajes</h5>
-            <p>Claro aca estoy solo que no buscaste lo suficiente y me quede esperando </p>
-            <p>Puedes tomar claro que ahi quedo en la nevera para que tomes con bocadillo</p>
+            <!-- <p>Claro aca estoy solo que no buscaste lo suficiente y me quede esperando </p>
+            <p>Puedes tomar claro que ahi quedo en la nevera para que tomes con bocadillo</p> -->
           </div>
         </div>
       </div>

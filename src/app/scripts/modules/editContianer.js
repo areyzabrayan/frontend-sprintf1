@@ -1,10 +1,8 @@
-
-import  getUsers  from "../services/getUsers";
+import getUsers from "../services/getUsers";
 import { URL_API } from "../services/dataUsers";
 import { seeLocal } from "../services/validateUser";
 import { nameEdituser, changeName, change } from "./dataDom";
 import axios from "axios";
-
 
 export const printName = () => {
   const storedName = seeLocal();
@@ -17,12 +15,11 @@ export const printName = () => {
 change.addEventListener("click", () => {
   const userId = getUsers(id);
   updateUser(id);
-  console.log("hice clic",userId);
 });
 
 export const updateUser = (id) => {
   const editName = changeName.value;
-  const userId = getUsers('id');
+  const userId = getUsers("id");
 
   const nameEdit = {
     id: userId,
@@ -35,12 +32,10 @@ export const updateUser = (id) => {
         "Content-Type": "application/json",
       },
     })
-    .then(response => {
+    .then((response) => {
       console.log("Nombre actualizado:", response.data.Nombre);
     })
-    .catch(error => {
+    .catch((error) => {
       console.error("Error al actualizar el nombre:", error);
     });
 };
-
-

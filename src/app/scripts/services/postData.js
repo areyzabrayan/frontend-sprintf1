@@ -1,5 +1,4 @@
 import axios from "axios";
-import Swal from "sweetalert2";
 
 const postData = (newUser, url) => {
   axios
@@ -10,12 +9,6 @@ const postData = (newUser, url) => {
     })
     .then((response) => {
       console.log(response);
-      Swal.fire({
-        icon: 'success',
-        title: 'Hecho',
-        text: 'Nuevo usuario agregado!',
-      })
-      //popNotification2("Ususario registrado", response.data);
     })
     .catch((error) => {
       console.log("Error al agregar elemento a Usuarios:", error);

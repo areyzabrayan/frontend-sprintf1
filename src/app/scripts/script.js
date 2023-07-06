@@ -1,11 +1,27 @@
 import newUser from "./services/newUser";
-import { validateUser, seeSegnin, seeLocal } from "./services/validateUser";
+import { validateUser, seeSegnin } from "./services/validateUser";
 import { toggleSignInUp } from "./modules/toggleSignInUp";
-import { bluebg, form, form3 } from "./modules/dataDom";
-import { local, printImgOnline } from "./modules/userOnline";
-import { printContacts } from "./modules/printContacts";
+import {
+  backChat,
+  bluebg,
+  btnSend,
+  form,
+  form3,
+  inputMsg,
+  inputchats,
+} from "./modules/dataDom";
+import {
+  idList,
+  idUserSelec,
+  oldMessages,
+  printChatsFinder,
+  printContacts,
+  userSesionV,
+} from "./modules/printContacts";
 import "../style/style.scss";
-import { printName } from "./modules/editContianer";
+import addArrayElement, { newMessages } from "./services/newMessages.js";
+import { URL_MSG } from "./services/dataUsers";
+import postData from "./services/postData";
 
 seeSegnin();
 
@@ -28,55 +44,86 @@ document.addEventListener("DOMContentLoaded", async () => {
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("goOption")) {
     const actions = document.querySelector(".option-edit");
-    console.log(actions);
     actions.classList.toggle("active");
   }
 });
 
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("first")) {
-    // console.log('hice click');
     const actions = document.querySelector(".visual");
-    // console.log(actions);
     actions.classList.toggle("active2");
   }
 });
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("arrow")) {
-    console.log("hice click");
     const actions = document.querySelector(".visual");
-    console.log(actions);
     actions.classList.toggle("active2");
   }
 });
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("search-outline")) {
-    console.log("hice click");
     const actions = document.querySelector(".show");
-    console.log(actions);
     actions.classList.toggle("show2");
   }
 });
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("closeSearch")) {
-    console.log("hice click");
     const actions = document.querySelector(".show");
-    console.log(actions);
     actions.classList.toggle("show2");
   }
 });
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("second")) {
-    console.log("hice click");
     const actions = document.querySelector(".show");
-    console.log(actions);
     actions.classList.toggle("show2");
   }
 });
 document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("backChat")) {
+    const actions = document.querySelector(".righContainer");
+    actions.classList.add("cambio");
+  }
+});
+
+document.addEventListener("click", (event) => {
   if (event.target.classList.contains("second")) {
-    console.log("hice click");
     localStorage.clear();
     window.location.reload();
   }
 });
+
+//------------------------------------------------------------------------------
+//evento click al enviar un mensaje
+//------------------------------------------------------------------------------
+btnSend.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const inptmessage = inputMsg.value;
+  const idUser1 = userSesionV();
+  const idUser2 = idUserSelec;
+  let messages = oldMessages || []; // Inicializar como un array vacío si oldMessages es falsy
+
+  if (inptmessage.length > 0) {
+    const newMessage = newMessages(inptmessage);
+    if (idList === 0) {
+      const newConversation = {
+        idUser1: idUser1,
+        idUser2: Number(idUser2),
+        messages: [newMessage],
+      };
+      postData(newConversation, URL_MSG);
+    } else {
+      addArrayElement(idList, newMessage, URL_MSG);
+    }
+
+    inputMsg.value = "";
+  } else {
+    return;
+  }
+});
+
+//------------------------------------------------------------------------------
+//evento filter al buscar en por nombre
+//-----------------------------------------------------------------------
+
+inputchats.addEventListener("change", printChatsFinder);

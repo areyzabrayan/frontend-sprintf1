@@ -1,5 +1,4 @@
 import getUsers from "./getUsers";
-import { popNotification, popNotification2 } from "../modules/popNotification";
 import { form3, nameR, celphoneR, passwordR, urlR } from "../modules/dataDom";
 import { URL_API } from "./dataUsers";
 import postData from "./postData";
@@ -10,18 +9,17 @@ const newUser = async (event) => {
 
   try {
     const users = await getUsers(URL_API);
-    console.log(users);
 
     const newCelphoneR = celphoneR.value;
 
     const foundNumber = users.find((user) => user.Celphone == newCelphoneR);
     if (foundNumber) {
       Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Numero Existente!',
-        footer: 'Intenta de nuevo'
-      })
+        icon: "error",
+        title: "Oops...",
+        text: "Numero Existente!",
+        footer: "Intenta de nuevo",
+      });
       return;
     }
 
@@ -38,6 +36,11 @@ const newUser = async (event) => {
 
     form3.reset();
     postData(newUser, URL_API);
+    Swal.fire({
+      icon: "success",
+      title: "Hecho",
+      text: "Nuevo usuario agregado!",
+    });
   } catch (error) {
     console.log(error);
   }

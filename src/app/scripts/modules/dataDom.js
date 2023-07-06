@@ -35,21 +35,34 @@ export let editContainerVisual = document.querySelector(
 );
 
 // Input nombre de usuario
-
 export const first = document.querySelector(".first");
 export const editContainer__name = document.querySelector(
   ".editContainer__name"
 );
 export const change = document.querySelector(".change");
-
 export const nameEdituser = document.querySelector(".nameEdituser");
-
 export const changeName = document.querySelector(".changeName");
 
 // DOM chatBox
 export const imgUser = document.querySelector(".imgText .userimg img");
 export const username = document.querySelector(".imgText h4");
+export const status = document.querySelector(".imgText span");
+export const inputMsg = document.querySelector(".inputMsg");
+export const btnSend = document.querySelector(".btnSend");
+export const chatBox = document.querySelector(".chatBox");
 
 // Container responsive
 
-export const rightContainer = document.querySelector(".righContainer");
+export const rightContainer = document.querySelector(".righContainer cambio");
+export const backChat = document.querySelector(".backChat");
+
+
+// container filter
+
+export const inputpalabra = document.querySelector(".searchPalabra");
+export const lupa = document.querySelector(".lupa");
+export const filter = document.querySelector(".searchContainer__showFilter");
+
+
+//chats filter
+export const inputchats = document.querySelector(".chats_Search");

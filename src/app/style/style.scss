@@ -229,7 +229,6 @@ body.active {
   position: relative;
   flex: 70%;
   background-color: #e5ddd5;
-  
 }
 .desktop .righContainer::before {
   content: "";
@@ -391,9 +390,11 @@ body.active {
   text-overflow: ellipsis;
 }
 
-.message b {
-  background-color: #06d755;
-  color: #fff;
+.messagechat b {
+  position: absolute;
+  top: 10px;
+  background-color: #06d79fc9;
+  font-weight: bold;
   min-width: 20px;
   height: 20px;
   border-radius: 50px;
@@ -401,8 +402,57 @@ body.active {
   justify-content: center;
   align-items: center;
   font-size: 0.75em;
+  display: none;
+  cursor: pointer;
 }
 
+.messagechat:hover b {
+  display: flex;
+  z-index: 3;
+}
+//////////////////////
+.messagechat b:hover + .menuContainer {
+  display: block;
+}
+
+.menuContainer {
+  position: absolute;
+  bottom: 40px;
+  background-color: #ffffff;
+  padding: 5px;
+  display: none;
+  margin-bottom: 15px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+}
+
+.menuOptions {
+  display: flex;
+  flex-direction: column;
+  width: 70px;
+}
+
+.menuOptions span {
+  padding: 5px;
+}
+
+.edit {
+  cursor: pointer;
+}
+
+.edit:hover {
+  border-left: 3px solid rgba(0, 0, 1, 0.217);
+}
+
+.delet {
+  cursor: pointer;
+}
+
+.delet:hover {
+  border-left: 3px solid rgba(0, 0, 1, 0.217);
+}
+/////////////
 .imgText {
   position: relative;
   display: flex;
@@ -629,10 +679,8 @@ body.active {
   margin-top: 20px;
   display: flex;
   justify-content: center;
-  
-  
 }
-.editContainer__name input{
+.editContainer__name input {
   border: none;
   display: flex;
   text-align: center;
@@ -653,7 +701,7 @@ body.active {
   border: none;
   padding-left: 15px;
 }
-.editContainer__name-edit span{
+.editContainer__name-edit span {
   padding-right: 10px;
 }
 .editContainer__name-edit input::placeholder {
@@ -666,7 +714,19 @@ body.active {
   flex: 70%;
   background: #e5ddd5;
 }
-
+.desktop .righContainer .cambio {
+  background: #e5ddd5; 
+ 
+}
+.desktop .cambio{
+  display: none;
+}
+.desktop .righContainer .backChat{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: none;
+}
 .desktop .righContainer::before {
   content: "";
   position: absolute;
@@ -815,6 +875,9 @@ body.active {
   border: none;
   width: 290px;
 }
+.searchContainer__filter .lupa{
+  cursor: pointer;
+}
 .searchContainer__filter input::placeholder {
   font-weight: 1000;
   color: #111;
@@ -878,17 +941,53 @@ body.active {
   display: none;
 }
 
-@media (max-width: 320px){
+@media (max-width: 320px) {
   .desktop .option-edit {
     left: 165px;
+  }
+  .desktop .righContainer {
+    display: none;
+  }
+  .desktop .editContainer {
+    width: 292px;
+  }
+  .editContainer__img {
+    margin-left: 70px;
+  }
+@media (max-width: 400px){
+  .desktop .option-edit {
+    left: 235px;
     }
-    .desktop .righContainer {
-      display: none;
+    .desktop .righContainer  {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 360px;
+      height: 479px;
+      flex: 70%;
+      background: #e5ddd5;
+       
     }
     .desktop .editContainer {
-      width: 292px;
+      width: 360px;
     }
     .editContainer__img {
-      margin-left: 70px;
+      margin-left: 100px;
     }
+    .desktop .righContainer .backChat{
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      cursor: pointer;
+      display: block;
+      z-index: 2;
+    }
+    .desktop .righContainer .header .imgText {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+    }
+}
 }
