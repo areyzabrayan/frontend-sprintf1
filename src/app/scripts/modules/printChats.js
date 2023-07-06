@@ -4,6 +4,8 @@ import { chatBox } from "./dataDom";
 import addArrayElement from "../services/newMessages";
 import { idList, userSesionV } from "./printContacts";
 import axios from "axios";
+import { deleteMessage } from "../services/deleteMessage";
+import { updateMessage } from "../services/upDateMessage";
 
 export const printChats = async () => {
   try {
@@ -109,7 +111,7 @@ export const renderMessages = (messages, userSesion) => {
       });
 
       editForm.addEventListener("submit", (event) => {
-        event.preventDefault(); // Evitar el envío del formulario por defecto
+        event.preventDefault();
         const editedText = editInput.value; // Obtener el nuevo texto del campo de edición
         console.log("Mensaje editado:", editedText);
         messageContent.style.display = "block";
@@ -117,51 +119,17 @@ export const renderMessages = (messages, userSesion) => {
       });
 
       deleteOption.addEventListener("click", () => {
-        // Acción que deseas realizar al hacer clic en el elemento "Eliminar"
         console.log("Hice clic en 'Eliminar' del mensaje con ID:", id);
+        const new_URL = `${URL_MSG}/${idList}`;
+        deleteMessage(id, new_URL);
       });
 
       submitButton.addEventListener("click", () => {
-        // Acción que deseas realizar al hacer clic en el botón "Enviar"
-        const newMessageText = editInput.value; // Obtener el nuevo texto del mensaje
+        const newMessageText = editInput.value;
         const new_URL = `${URL_MSG}/${idList}`;
 
         updateMessage(id, newMessageText, new_URL);
       });
     }
   });
-};
-
-// Código actualizado
-const updateMessage = async (id, updatedMessage, url) => {
-  try {
-    // Realizar la solicitud GET para obtener el objeto existente
-    const response = await axios.get(url);
-    const existingObject = response.data;
-    console.log(existingObject);
-
-    // Obtener el array de mensajes
-    const messagesArray = existingObject.messages;
-
-    // Buscar el índice del mensaje en el array
-    const messageIndex = messagesArray.findIndex(
-      (message) => message.id === id
-    );
-
-    // Verificar si se encontró el mensaje
-    if (messageIndex === -1) {
-      console.error("No se encontró el mensaje con el ID:", id);
-      return;
-    }
-
-    // Actualizar el mensaje en el objeto existente
-    messagesArray[messageIndex].message = updatedMessage;
-
-    // Realizar la solicitud PUT o PATCH para actualizar el objeto en el servidor
-    await axios.put(url, existingObject);
-
-    console.log("Mensaje actualizado correctamente:", existingObject);
-  } catch (error) {
-    console.error("Error al actualizar el mensaje:", error);
-  }
 };

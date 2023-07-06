@@ -2,10 +2,7 @@ import newUser from "./services/newUser";
 import { validateUser, seeSegnin, seeLocal } from "./services/validateUser";
 import { toggleSignInUp } from "./modules/toggleSignInUp";
 import { bluebg, btnSend, form, form3, inputMsg } from "./modules/dataDom";
-import { local, printImgOnline } from "./modules/userOnline";
 import {
-  actualMessagesByIds,
-  findMessagesByIds,
   idList,
   idUserSelec,
   oldMessages,
@@ -13,12 +10,9 @@ import {
   userSesionV,
 } from "./modules/printContacts";
 import "../style/style.scss";
-import { printName } from "./modules/editContianer";
 import addArrayElement, { newMessages } from "./services/newMessages.js";
-import getUsers from "./services/getUsers";
 import { URL_MSG } from "./services/dataUsers";
 import postData from "./services/postData";
-import { renderMessages } from "./modules/printChats";
 
 seeSegnin();
 

@@ -13,7 +13,6 @@ import {
 import { printImgOnline } from "../modules/userOnline";
 import { printName } from "../modules/editContianer";
 import Swal from "sweetalert2";
-import { popNotification2 } from "../modules/popNotification";
 
 export const validateUser = async (event) => {
   event.preventDefault();
@@ -32,7 +31,6 @@ export const validateUser = async (event) => {
       //console.log("User information:", foundCel);
       removHiddenPwd();
       // alert("Enter password");
-      popNotification2("Enter password");
       form2.addEventListener("submit", (e) => {
         e.preventDefault();
         validPwd(users);
@@ -42,11 +40,11 @@ export const validateUser = async (event) => {
       //console.log("Number not found in the array:", enteredCel);
       // alert("Enter a valid password");
       Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Usuario Incorrepto!',
-        footer: 'Intenta de nuevo'
-      })
+        icon: "error",
+        title: "Oops...",
+        text: "Usuario Incorrepto!",
+        footer: "Intenta de nuevo",
+      });
       form.reset();
       addHiddenPwd();
     }
@@ -66,20 +64,19 @@ const validPwd = (users) => {
     console.log(userOnline);
     seeDesktop();
     const welcome = seeLocal();
-    popNotification2(`Welcome back ${welcome}`);
     Swal.fire({
-      icon: 'success',
-      title: 'Muy bien',
-      text: 'bienvenido!',
-    })
+      icon: "success",
+      title: "Muy bien",
+      text: "bienvenido!",
+    });
     printImgOnline();
     printName();
   } else {
     Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: 'Contraseña Incorrepta!',
-    })
+      icon: "error",
+      title: "Oops...",
+      text: "Contraseña Incorrepta!",
+    });
     form.reset();
     form2.reset();
     addHiddenPwd();

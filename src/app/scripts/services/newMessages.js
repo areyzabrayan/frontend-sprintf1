@@ -1,9 +1,5 @@
 import { DateTime } from "luxon";
-import {
-  findMessagesByIds,
-  idUserSelec,
-  userSesionV,
-} from "../modules/printContacts";
+import { userSesionV } from "../modules/printContacts";
 import axios from "axios";
 import { renderMessages } from "../modules/printChats";
 

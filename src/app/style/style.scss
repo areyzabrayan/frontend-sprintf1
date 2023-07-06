@@ -445,6 +445,10 @@ body.active {
   border-left: 3px solid rgba(0, 0, 1, 0.217);
 }
 
+.delet {
+  cursor: pointer;
+}
+
 .delet:hover {
   border-left: 3px solid rgba(0, 0, 1, 0.217);
 }

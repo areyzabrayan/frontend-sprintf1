@@ -1,5 +1,4 @@
 import getUsers from "./getUsers";
-import { popNotification, popNotification2 } from "../modules/popNotification";
 import { form3, nameR, celphoneR, passwordR, urlR } from "../modules/dataDom";
 import { URL_API } from "./dataUsers";
 import postData from "./postData";
