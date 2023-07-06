@@ -113,13 +113,11 @@ export const renderMessages = (messages, userSesion) => {
       editForm.addEventListener("submit", (event) => {
         event.preventDefault();
         const editedText = editInput.value; // Obtener el nuevo texto del campo de edición
-        console.log("Mensaje editado:", editedText);
         messageContent.style.display = "block";
         editForm.style.display = "none";
       });
 
       deleteOption.addEventListener("click", () => {
-        console.log("Hice clic en 'Eliminar' del mensaje con ID:", id);
         const new_URL = `${URL_MSG}/${idList}`;
         deleteMessage(id, new_URL);
       });

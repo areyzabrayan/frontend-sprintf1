@@ -6,7 +6,6 @@ export const deleteMessage = async (id, url) => {
     // Realizar la solicitud GET para obtener el objeto existente
     const response = await axios.get(url);
     const existingObject = response.data;
-    console.log(existingObject);
 
     // Obtener el array de mensajes
     const messagesArray = existingObject.messages;
@@ -27,8 +26,6 @@ export const deleteMessage = async (id, url) => {
 
     // Realizar la solicitud PUT o PATCH para actualizar el objeto en el servidor
     await axios.put(url, existingObject);
-
-    console.log("Mensaje eliminado correctamente:", existingObject);
     Swal.fire({
       icon: "success",
       title: "Excelent",

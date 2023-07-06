@@ -61,7 +61,6 @@ const validPwd = (users) => {
     const userLocal = JSON.stringify(saveLocalUser);
     localStorage.setItem("saveLocalUser", userLocal);
     const userOnline = seeLocal();
-    console.log(userOnline);
     seeDesktop();
     const welcome = seeLocal();
     Swal.fire({

@@ -4,10 +4,7 @@ import axios from "axios";
 import { renderMessages } from "../modules/printChats";
 
 export const newMessages = (message) => {
-  //Calcular id
-
   const userSesion = userSesionV();
-  //const date = DateTime.now().toLocaleString(DateTime.DATE_SHORT);
 
   const newMessage = {
     id: generateUniqueId(),
@@ -34,8 +31,6 @@ const addArrayElement = async (id, newArrayElement, url) => {
     const response2 = await axios.get(`${url}/${id}`);
     const existingObject2 = response2.data;
     renderMessages(existingObject2.messages, userSesionV());
-
-    console.log("Elemento agregado correctamente", existingObject2.messages);
   } catch (error) {
     console.error("Error al agregar el elemento:", error);
   }
@@ -43,14 +38,14 @@ const addArrayElement = async (id, newArrayElement, url) => {
 
 export default addArrayElement;
 
-export const findMessages = async(keyword) =>{
+export const findMessages = async (keyword) => {
   try {
     const response = await axios.get(`${url}?messages_like=${keyword}`);
-    const menssageFilter = response.data
+    const menssageFilter = response.data;
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 export const generateUniqueId = () => {
   const timestamp = Date.now().toString(36); // Obtener una representación en base 36 del timestamp actual

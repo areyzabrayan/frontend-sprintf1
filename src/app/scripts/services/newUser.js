@@ -9,7 +9,6 @@ const newUser = async (event) => {
 
   try {
     const users = await getUsers(URL_API);
-    console.log(users);
 
     const newCelphoneR = celphoneR.value;
 

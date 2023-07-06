@@ -3,15 +3,12 @@ import {
   chatlist,
   imgUser,
   username,
-  rightContainer,
   inputMsg,
   chatBox,
   inputchats,
-  divSuperior,
 } from "./dataDom";
 import { URL_API, URL_MSG } from "../services/dataUsers";
-import postData from "../services/postData";
-import { printChats, renderMessages } from "./printChats";
+import { renderMessages } from "./printChats";
 
 let selectedCard; // Declarar la variable selectedCard en el ámbito global
 export let idUserSelec = "";
@@ -24,7 +21,6 @@ export const printContacts = async () => {
     const response = await getUsers(URL_API);
     const users = response;
     let card = chatlist;
-    console.log(users);
     printPersons(users, card);
   } catch (error) {
     console.error("Error fetching user data:", error);
@@ -33,8 +29,6 @@ export const printContacts = async () => {
 
 export const printPersons = (array, container) => {
   array.forEach((item) => {
-    console.log(item.Nombre);
-    // console.log(item.info);
     const card = document.createElement("div");
     card.classList.add("block");
     card.innerHTML = `
@@ -64,7 +58,6 @@ export const printPersons = (array, container) => {
     // Agregar evento de clic al elemento 'card'
     card.addEventListener("click", () => {
       if (selectedCard) {
-        console.log("hiceClick");
         const card = document.querySelector(".righContainer");
         card.classList.remove("cambio");
 
@@ -79,7 +72,6 @@ export const printPersons = (array, container) => {
 
       // Obtener el ID del usuario de la card seleccionada
       const userId2 = card.dataset.userId;
-      console.log("ID del usuario dos:", userId2);
 
       // Obtener los datos del usuario de la card seleccionada
       const imageUrl = item.Url_image;
@@ -127,7 +119,6 @@ export const findMessagesByIds = async (idUser1, idUser2) => {
     } else {
       const chatContainer = chatBox;
       chatContainer.innerHTML = "";
-      console.log("Mensajes no encontrados");
       oldMessages = "";
       idList = 0;
     }
@@ -138,7 +129,6 @@ export const findMessagesByIds = async (idUser1, idUser2) => {
 
 export const printChatsFinder = async () => {
   const chatFinder = await findChats(inputchats.value);
-  console.log(chatFinder);
   let card = chatlist;
   card.innerHTML = "";
   printPersons(chatFinder, card);

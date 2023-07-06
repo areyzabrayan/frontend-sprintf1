@@ -1,5 +1,5 @@
 import newUser from "./services/newUser";
-import { validateUser, seeSegnin, seeLocal } from "./services/validateUser";
+import { validateUser, seeSegnin } from "./services/validateUser";
 import { toggleSignInUp } from "./modules/toggleSignInUp";
 import {
   backChat,
@@ -9,9 +9,7 @@ import {
   form3,
   inputMsg,
   inputchats,
-  inputpalabra,
 } from "./modules/dataDom";
-import { local, printImgOnline } from "./modules/userOnline";
 import {
   idList,
   idUserSelec,
@@ -46,63 +44,49 @@ document.addEventListener("DOMContentLoaded", async () => {
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("goOption")) {
     const actions = document.querySelector(".option-edit");
-    console.log(actions);
     actions.classList.toggle("active");
   }
 });
 
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("first")) {
-    // console.log('hice click');
     const actions = document.querySelector(".visual");
-    // console.log(actions);
     actions.classList.toggle("active2");
   }
 });
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("arrow")) {
-    console.log("hice click");
     const actions = document.querySelector(".visual");
-    console.log(actions);
     actions.classList.toggle("active2");
   }
 });
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("search-outline")) {
-    console.log("hice click");
     const actions = document.querySelector(".show");
-    console.log(actions);
     actions.classList.toggle("show2");
   }
 });
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("closeSearch")) {
-    console.log("hice click");
     const actions = document.querySelector(".show");
-    console.log(actions);
     actions.classList.toggle("show2");
   }
 });
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("second")) {
-    console.log("hice click");
     const actions = document.querySelector(".show");
-    console.log(actions);
     actions.classList.toggle("show2");
   }
 });
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("backChat")) {
-    console.log("hice click");
     const actions = document.querySelector(".righContainer");
-    console.log(actions);
     actions.classList.add("cambio");
   }
 });
 
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("second")) {
-    console.log("hice click");
     localStorage.clear();
     window.location.reload();
   }
@@ -120,22 +104,15 @@ btnSend.addEventListener("click", (e) => {
   let messages = oldMessages || []; // Inicializar como un array vacío si oldMessages es falsy
 
   if (inptmessage.length > 0) {
-    console.log(inptmessage);
-    console.log(messages.messages);
     const newMessage = newMessages(inptmessage);
-
-    console.log(newMessage);
-    console.log(idList);
     if (idList === 0) {
       const newConversation = {
         idUser1: idUser1,
         idUser2: Number(idUser2),
         messages: [newMessage],
       };
-      console.log(newConversation);
       postData(newConversation, URL_MSG);
     } else {
-      console.log("id lista", idList);
       addArrayElement(idList, newMessage, URL_MSG);
     }
 
@@ -147,6 +124,6 @@ btnSend.addEventListener("click", (e) => {
 
 //------------------------------------------------------------------------------
 //evento filter al buscar en por nombre
-//------------------------------------------------------------------------// inputpalabra.addEventListener('change', printMessageFinder )
+//-----------------------------------------------------------------------
 
 inputchats.addEventListener("change", printChatsFinder);
