@@ -1,4 +1,4 @@
-import getUsers from "../services/getUsers";
+import getUsers, { findChats } from "../services/getUsers";
 import {
   chatlist,
   imgUser,
@@ -6,6 +6,8 @@ import {
   rightContainer,
   inputMsg,
   chatBox,
+  inputchats,
+  divSuperior,
 } from "./dataDom";
 import { URL_API, URL_MSG } from "../services/dataUsers";
 import postData from "../services/postData";
@@ -22,13 +24,14 @@ export const printContacts = async () => {
     const response = await getUsers(URL_API);
     const users = response;
     let card = chatlist;
+    console.log(users);
     printPersons(users, card);
   } catch (error) {
     console.error("Error fetching user data:", error);
   }
 };
 
-const printPersons = (array, container) => {
+export const printPersons = (array, container) => {
   array.forEach((item) => {
     console.log(item.Nombre);
     // console.log(item.info);
@@ -62,14 +65,16 @@ const printPersons = (array, container) => {
     card.addEventListener("click", () => {
       if (selectedCard) {
         console.log('hiceClick');
-        //  const card = document.querySelector(".righContainer");
-        //  card.classList.toggle("show2")
-    
-        selectedCard.classList.remove("onclik"); // Eliminar la clase 'oscuro' del elemento anterior   
+         const card = document.querySelector(".righContainer");
+         card.classList.remove("cambio");
+        
+        
+        selectedCard.classList.remove("onclik");
+         // Eliminar la clase 'oscuro' del elemento anterior   
       }
 
       card.classList.add("onclik"); // Agregar la clase 'oscuro' al elemento actual
-      card.classList.remove("cambio")
+      
       selectedCard = card; // Actualizar el elemento seleccionado actualmente
       inputMsg.value = "";
 
@@ -139,3 +144,13 @@ export const findMessagesByIds = async (idUser1, idUser2) => {
     console.log(error);
   }
 };
+
+export const printChatsFinder = async () =>{  
+  const chatFinder = await findChats(inputchats.value)
+  console.log(chatFinder);
+  let card = chatlist;
+  card.innerHTML = '';
+  printPersons(chatFinder, card);
+}
+
+

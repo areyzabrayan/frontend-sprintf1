@@ -698,14 +698,18 @@ body.active {
 .desktop .righContainer  {
   position: relative;
   flex: 70%;
-  background: #e5ddd5;
-  
+  background: #e5ddd5; 
  
 }
-.desktop .righContainer .cambio{
+.desktop .cambio{
   display: none;
 }
-
+.desktop .righContainer .backChat{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: none;
+}
 .desktop .righContainer::before {
   content: "";
   position: absolute;
@@ -854,6 +858,9 @@ body.active {
   border: none;
   width: 290px;
 }
+.searchContainer__filter .lupa{
+  cursor: pointer;
+}
 .searchContainer__filter input::placeholder {
   font-weight: 1000;
   color: #111;
@@ -917,17 +924,39 @@ body.active {
   display: none;
 }
 
-@media (max-width: 320px){
+@media (max-width: 400px){
   .desktop .option-edit {
-    left: 165px;
+    left: 235px;
     }
-    .desktop .righContainer {
-      display: none;
+    .desktop .righContainer  {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 360px;
+      height: 479px;
+      flex: 70%;
+      background: #e5ddd5;
+       
     }
     .desktop .editContainer {
-      width: 292px;
+      width: 360px;
     }
     .editContainer__img {
-      margin-left: 70px;
+      margin-left: 100px;
+    }
+    .desktop .righContainer .backChat{
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      cursor: pointer;
+      display: block;
+      z-index: 2;
+    }
+    .desktop .righContainer .header .imgText {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
     }
 }
