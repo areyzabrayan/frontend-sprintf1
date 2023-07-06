@@ -1,7 +1,6 @@
 import { DateTime } from "luxon";
 import { URL_MSG } from "../services/dataUsers";
 import { chatBox } from "./dataDom";
-import addArrayElement from "../services/newMessages";
 import { idList, userSesionV } from "./printContacts";
 import axios from "axios";
 import { deleteMessage } from "../services/deleteMessage";

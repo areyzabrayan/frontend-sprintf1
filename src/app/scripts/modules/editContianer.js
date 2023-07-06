@@ -1,5 +1,5 @@
 import { seeLocal } from "../services/validateUser";
-import { nameEditUser, nameEditUser2, editFoto, editFoto2 } from "./dataDom";
+import { nameEditUser, editFoto } from "./dataDom";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { printImgOnline } from "./userOnline";

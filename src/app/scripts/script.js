@@ -41,10 +41,6 @@ form3.addEventListener("submit", (event) => {
   newUser(event);
 });
 
-// document.addEventListener("DOMContentLoaded", async () => {
-//   printContacts();
-// });
-
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("goOption")) {
     const actions = document.querySelector(".option-edit");
