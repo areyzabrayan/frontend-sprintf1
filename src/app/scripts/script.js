@@ -1,11 +1,22 @@
 import newUser from "./services/newUser";
 import { validateUser, seeSegnin, seeLocal } from "./services/validateUser";
 import { toggleSignInUp } from "./modules/toggleSignInUp";
-import { bluebg, btnSend, form, form3, inputMsg } from "./modules/dataDom";
+import {
+  backChat,
+  bluebg,
+  btnSend,
+  form,
+  form3,
+  inputMsg,
+  inputchats,
+  inputpalabra,
+} from "./modules/dataDom";
+import { local, printImgOnline } from "./modules/userOnline";
 import {
   idList,
   idUserSelec,
   oldMessages,
+  printChatsFinder,
   printContacts,
   userSesionV,
 } from "./modules/printContacts";
@@ -80,6 +91,14 @@ document.addEventListener("click", (event) => {
     actions.classList.toggle("show2");
   }
 });
+document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("backChat")) {
+    console.log("hice click");
+    const actions = document.querySelector(".righContainer");
+    console.log(actions);
+    actions.classList.add("cambio");
+  }
+});
 
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("second")) {
@@ -125,3 +144,9 @@ btnSend.addEventListener("click", (e) => {
     return;
   }
 });
+
+//------------------------------------------------------------------------------
+//evento filter al buscar en por nombre
+//------------------------------------------------------------------------// inputpalabra.addEventListener('change', printMessageFinder )
+
+inputchats.addEventListener("change", printChatsFinder);
