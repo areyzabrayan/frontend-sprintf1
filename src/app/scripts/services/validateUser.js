@@ -13,6 +13,7 @@ import {
 import { printImgOnline } from "../modules/userOnline";
 import { printName } from "../modules/editContianer";
 import Swal from "sweetalert2";
+import { printContacts } from "../modules/printContacts";
 
 export const validateUser = async (event) => {
   event.preventDefault();
@@ -63,6 +64,7 @@ const validPwd = (users) => {
     const userOnline = seeLocal();
     seeDesktop();
     const welcome = seeLocal();
+    printContacts();
     Swal.fire({
       icon: "success",
       title: "Muy bien",

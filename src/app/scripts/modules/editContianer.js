@@ -1,41 +1,46 @@
-import getUsers from "../services/getUsers";
-import { URL_API } from "../services/dataUsers";
 import { seeLocal } from "../services/validateUser";
-import { nameEdituser, changeName, change } from "./dataDom";
+import { nameEditUser, nameEditUser2, editFoto, editFoto2 } from "./dataDom";
 import axios from "axios";
+import Swal from "sweetalert2";
+import { printImgOnline } from "./userOnline";
 
 export const printName = () => {
   const storedName = seeLocal();
   if (storedName) {
-    nameEdituser.setAttribute("value", storedName);
-    changeName.setAttribute("value", storedName);
+    nameEditUser.setAttribute("value", storedName);
+    editFoto.setAttribute("value", storedName);
   }
 };
 
-change.addEventListener("click", () => {
-  const userId = getUsers(id);
-  updateUser(id);
-});
+export const updateUserData = async (id, newValue, field, url) => {
+  try {
+    // Realizar la solicitud GET para obtener el objeto existente
+    const response = await axios.get(`${url}/${id}`);
+    const existingObject = response.data;
 
-export const updateUser = (id) => {
-  const editName = changeName.value;
-  const userId = getUsers("id");
+    // Verificar si se encontró el objeto con el ID
+    if (existingObject.id !== id) {
+      console.error("No se encontró el objeto con el ID:", id);
+      return;
+    }
 
-  const nameEdit = {
-    id: userId,
-    Nombre: editName,
-  };
+    // Actualizar el campo correspondiente en el objeto existente
+    existingObject[field] = newValue;
 
-  axios
-    .patch(URL_API, nameEdit, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-    .then((response) => {
-      console.log("Nombre actualizado:", response.data.Nombre);
-    })
-    .catch((error) => {
-      console.error("Error al actualizar el nombre:", error);
+    // Realizar la solicitud PUT o PATCH para actualizar el objeto en el servidor
+    await axios.put(`${url}/${id}`, existingObject);
+
+    Swal.fire({
+      icon: "success",
+      title: "Muy bien",
+      text: "Campo actualizado correctamente",
     });
+    const savedUserLocal = JSON.parse(localStorage.getItem("saveLocalUser"));
+    savedUserLocal[field] = newValue;
+    localStorage.setItem("saveLocalUser", JSON.stringify(savedUserLocal));
+
+    printImgOnline();
+  } catch (error) {
+    console.error(`Error al actualizar el campo ${field}:`, error);
+  }
 };

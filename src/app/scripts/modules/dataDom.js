@@ -39,9 +39,10 @@ export const first = document.querySelector(".first");
 export const editContainer__name = document.querySelector(
   ".editContainer__name"
 );
-export const change = document.querySelector(".change");
-export const nameEdituser = document.querySelector(".nameEdituser");
-export const changeName = document.querySelector(".changeName");
+export const nameEditUser = document.querySelector(".nameEditUser");
+export const nameEditUser2 = document.querySelector(".nameEditUser2");
+export const editFoto = document.querySelector(".editFoto");
+export const editFoto2 = document.querySelector(".editFoto2");
 
 // DOM chatBox
 export const imgUser = document.querySelector(".imgText .userimg img");
@@ -56,13 +57,11 @@ export const chatBox = document.querySelector(".chatBox");
 export const rightContainer = document.querySelector(".righContainer cambio");
 export const backChat = document.querySelector(".backChat");
 
-
 // container filter
 
 export const inputpalabra = document.querySelector(".searchPalabra");
 export const lupa = document.querySelector(".lupa");
 export const filter = document.querySelector(".searchContainer__showFilter");
-
 
 //chats filter
 export const inputchats = document.querySelector(".chats_Search");
